@@ -1,0 +1,161 @@
+fileFormatVersion: 2
+guid: dba90295f636d2047accf6987b7ad764
+timeCreated: 1435956983
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Arm.Lower.L
+    100002: Arm.Lower.R
+    100004: Arm.Upper.L
+    100006: Arm.Upper.R
+    100008: Armature
+    100010: Foot.Back.L
+    100012: Foot.Back.R
+    100014: Foot.Front.L
+    100016: Foot.Front.R
+    100018: Foot.Toes.L
+    100020: Foot.Toes.L_end
+    100022: Foot.Toes.R
+    100024: Foot.Toes.R_end
+    100026: Hand.Lower.L
+    100028: Hand.Lower.L_end
+    100030: Hand.Lower.R
+    100032: Hand.Lower.R_end
+    100034: Hand.Upper.L
+    100036: Hand.Upper.R
+    100038: Head
+    100040: Head_end
+    100042: Hip.L
+    100044: Hip.R
+    100046: Knight
+    100048: //RootNode
+    100050: Leg.Lower.L
+    100052: Leg.Lower.R
+    100054: Leg.Upper.L
+    100056: Leg.Upper.R
+    100058: Neck
+    100060: Root
+    100062: Shoulder.L
+    100064: Shoulder.R
+    100066: Spine.Lower
+    100068: Spine.Upper
+    100070: Sword
+    100072: Thumb.L
+    100074: Thumb.L_end
+    100076: Thumb.R
+    100078: Thumb.R_end
+    400000: Arm.Lower.L
+    400002: Arm.Lower.R
+    400004: Arm.Upper.L
+    400006: Arm.Upper.R
+    400008: Armature
+    400010: Foot.Back.L
+    400012: Foot.Back.R
+    400014: Foot.Front.L
+    400016: Foot.Front.R
+    400018: Foot.Toes.L
+    400020: Foot.Toes.L_end
+    400022: Foot.Toes.R
+    400024: Foot.Toes.R_end
+    400026: Hand.Lower.L
+    400028: Hand.Lower.L_end
+    400030: Hand.Lower.R
+    400032: Hand.Lower.R_end
+    400034: Hand.Upper.L
+    400036: Hand.Upper.R
+    400038: Head
+    400040: Head_end
+    400042: Hip.L
+    400044: Hip.R
+    400046: Knight
+    400048: //RootNode
+    400050: Leg.Lower.L
+    400052: Leg.Lower.R
+    400054: Leg.Upper.L
+    400056: Leg.Upper.R
+    400058: Neck
+    400060: Root
+    400062: Shoulder.L
+    400064: Shoulder.R
+    400066: Spine.Lower
+    400068: Spine.Upper
+    400070: Sword
+    400072: Thumb.L
+    400074: Thumb.L_end
+    400076: Thumb.R
+    400078: Thumb.R_end
+    2300000: Sword
+    3300000: Sword
+    4300000: Sword
+    4300002: Knight
+    7400000: IdleLongStrip
+    7400002: AttackStrip
+    7400004: SwordAttackStrip
+    7400006: JumpStrip
+    7400008: WalkActionStrip
+    7400010: IdleStrip
+    7400012: Armature|KnightMoves
+    7400014: Armature|Plane.001Action
+    7400016: Sword|Plane.001Action
+    7400018: Knight|Plane.001Action
+    9500000: //RootNode
+    13700000: Knight
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
