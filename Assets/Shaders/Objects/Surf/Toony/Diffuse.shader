@@ -8,7 +8,7 @@ Shader "Aubergine/Objects/Surf/Toony/Diffuse" {
 
 		CGPROGRAM
 		//Absolute path
-		#include "Assets/Aubergines Toon Shaders/Shaders/Includes/Aubergine_Lights.cginc"
+		#include "Assets/Shaders/Includes/Aubergine_Lights.cginc"
 		//Or you can use relative path as below, whatever suits you
 		//#include "../../../Includes/Aubergine_Lights.cginc"
 		#pragma surface surf Aub_Toon
