@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Item
   - BlockTrigger
+  - PlacedItem
   layers:
   - Default
   - TransparentFX

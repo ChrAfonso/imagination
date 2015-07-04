@@ -7,7 +7,7 @@ public class CarryObjects : MonoBehaviour {
 	private GameObject objectUnderCursor;
 	private bool carrying;
 	private bool reelInCarriedObject = false; // drag it towards the carrier object
-	private GameObject carriedObject;
+	protected GameObject carriedObject;
 	private float distance;
 	public float smooth = 5.0f;
 	private GameObject p;
@@ -17,7 +17,7 @@ public class CarryObjects : MonoBehaviour {
 	void Start () {
 	
 		mainCamera = GameObject.FindWithTag ("MainCamera");
-
+	
 	}
 	
 
@@ -53,6 +53,7 @@ public class CarryObjects : MonoBehaviour {
 
 	void pickUp()
 	{
+		Debug.Log("mainCamera: " + mainCamera);
 
 		if (Input.GetButtonDown ("HoldObject"))
 	    {
@@ -91,39 +92,39 @@ public class CarryObjects : MonoBehaviour {
 				carriedObject.GetComponent<Rigidbody>().isKinematic = true;
 				Debug.Log("Grab!");
 			} else { // raycast fixed distance to screen center
-				float x = Screen.width / 2;
-				float y = Screen.height / 2;
+				//float x = Screen.width / 2;
+				//float y = Screen.height / 2;
 
-				Ray ray = mainCamera.GetComponent<Camera>().ScreenPointToRay(new Vector3(x, y));
-				RaycastHit hit;
-				if (Physics.Raycast(ray, out hit))
-				{
-					distance = hit.distance;
+				//Ray ray = mainCamera.GetComponent<Camera>().ScreenPointToRay(new Vector3(x, y));
+				//RaycastHit hit;
+				//if (Physics.Raycast(ray, out hit))
+				//{
+				//	distance = hit.distance;
 
-					if (distance <= 1.5f && distance <= 3)
-					{
+				//	if (distance <= 1.5f && distance <= 3)
+				//	{
 
-						distance = 2.5f;
+				//		distance = 2.5f;
 
-					}
+				//	}
 
-					if (hit.collider.transform.gameObject.tag == "Item")
-					{
+				//	if (hit.collider.transform.gameObject.tag == "Item")
+				//	{
 
-						p = hit.collider.gameObject;
+				//		p = hit.collider.gameObject;
 
-					}
+				//	}
 
-					if (p != null && distance <= 3)
-					{
+				//	if (p != null && distance <= 3)
+				//	{
 
-						carrying = true;
-						carriedObject = p.gameObject;
-						p.gameObject.GetComponent<Rigidbody>().isKinematic = true;
+				//		carrying = true;
+				//		carriedObject = p.gameObject;
+				//		p.gameObject.GetComponent<Rigidbody>().isKinematic = true;
 
-					}
+				//	}
 
-				}
+				//}
 			}
 		}
 
@@ -147,15 +148,19 @@ public class CarryObjects : MonoBehaviour {
 	{
 
 		if (Input.GetButtonUp ("HoldObject")) { //  || (CursorObject && !CursorObject.GetComponent<Collider>().bounds.Intersects(carriedObject.GetComponent<Collider>().bounds))) {
-
-			carrying = false;
-			distance = 0;
-			carriedObject.GetComponent<Rigidbody>().isKinematic = false;
-			carriedObject = null;
-
-			Debug.Log("Drop!");
+			drop();
 		}
 
+	}
+
+	protected virtual void drop()
+	{
+		carrying = false;
+		distance = 0;
+		carriedObject.GetComponent<Rigidbody>().isKinematic = false;
+		carriedObject = null;
+
+		Debug.Log("Drop!");
 	}
 
 }
