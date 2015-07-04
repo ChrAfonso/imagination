@@ -1,0 +1,317 @@
+fileFormatVersion: 2
+guid: 7c400a4c68b728f42a3f3fd80e1beb39
+timeCreated: 1435988134
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Barrel
+    100002: Barrel 1
+    100004: Barrel 2
+    100006: Barrel 3
+    100008: Barrel_L
+    100010: Barrel_R
+    100012: BarrelHolder
+    100014: BarrelHolder 1
+    100016: BarrelHolder 2
+    100018: BarrelHolder 3
+    100020: Body
+    100022: Body 1
+    100024: Body 2
+    100026: Body 3
+    100028: Boom1
+    100030: Boom2
+    100032: Bowsprit
+    100034: Canon_L1
+    100036: Canon_L2
+    100038: Canon_R1
+    100040: Canon_R2
+    100042: Center
+    100044: Flag
+    100046: Grip1
+    100048: Grip2
+    100050: Grip3
+    100052: Grip4
+    100054: Grip5
+    100056: Grip6
+    100058: Hull
+    100060: Mast1
+    100062: Mast2
+    100064: Ring
+    100066: Sail1
+    100068: Sail2
+    100070: //RootNode
+    100072: Stand
+    100074: Steeringwheel
+    100076: Wheel_L1
+    100078: Wheel_L1 1
+    100080: Wheel_L1 2
+    100082: Wheel_L1 3
+    100084: Wheel_L2
+    100086: Wheel_L2 1
+    100088: Wheel_L2 2
+    100090: Wheel_L2 3
+    100092: Wheel_R1
+    100094: Wheel_R1 1
+    100096: Wheel_R1 2
+    100098: Wheel_R1 3
+    100100: Wheel_R2
+    100102: Wheel_r2
+    100104: Wheel_R2 1
+    100106: Wheel_r2 1
+    400000: Barrel
+    400002: Barrel 1
+    400004: Barrel 2
+    400006: Barrel 3
+    400008: Barrel_L
+    400010: Barrel_R
+    400012: BarrelHolder
+    400014: BarrelHolder 1
+    400016: BarrelHolder 2
+    400018: BarrelHolder 3
+    400020: Body
+    400022: Body 1
+    400024: Body 2
+    400026: Body 3
+    400028: Boom1
+    400030: Boom2
+    400032: Bowsprit
+    400034: Canon_L1
+    400036: Canon_L2
+    400038: Canon_R1
+    400040: Canon_R2
+    400042: Center
+    400044: Flag
+    400046: Grip1
+    400048: Grip2
+    400050: Grip3
+    400052: Grip4
+    400054: Grip5
+    400056: Grip6
+    400058: Hull
+    400060: Mast1
+    400062: Mast2
+    400064: Ring
+    400066: Sail1
+    400068: Sail2
+    400070: //RootNode
+    400072: Stand
+    400074: Steeringwheel
+    400076: Wheel_L1
+    400078: Wheel_L1 1
+    400080: Wheel_L1 2
+    400082: Wheel_L1 3
+    400084: Wheel_L2
+    400086: Wheel_L2 1
+    400088: Wheel_L2 2
+    400090: Wheel_L2 3
+    400092: Wheel_R1
+    400094: Wheel_R1 1
+    400096: Wheel_R1 2
+    400098: Wheel_R1 3
+    400100: Wheel_R2
+    400102: Wheel_r2
+    400104: Wheel_R2 1
+    400106: Wheel_r2 1
+    2300000: Barrel
+    2300002: Barrel 1
+    2300004: Barrel 2
+    2300006: Barrel 3
+    2300008: Barrel_L
+    2300010: Barrel_R
+    2300012: BarrelHolder
+    2300014: BarrelHolder 1
+    2300016: BarrelHolder 2
+    2300018: BarrelHolder 3
+    2300020: Body
+    2300022: Body 1
+    2300024: Body 2
+    2300026: Body 3
+    2300028: Boom1
+    2300030: Boom2
+    2300032: Bowsprit
+    2300034: Center
+    2300036: Flag
+    2300038: Grip1
+    2300040: Grip2
+    2300042: Grip3
+    2300044: Grip4
+    2300046: Grip5
+    2300048: Grip6
+    2300050: Hull
+    2300052: Mast1
+    2300054: Mast2
+    2300056: Ring
+    2300058: Sail1
+    2300060: Sail2
+    2300062: Stand
+    2300064: Wheel_L1
+    2300066: Wheel_L1 1
+    2300068: Wheel_L1 2
+    2300070: Wheel_L1 3
+    2300072: Wheel_L2
+    2300074: Wheel_L2 1
+    2300076: Wheel_L2 2
+    2300078: Wheel_L2 3
+    2300080: Wheel_R1
+    2300082: Wheel_R1 1
+    2300084: Wheel_R1 2
+    2300086: Wheel_R1 3
+    2300088: Wheel_R2
+    2300090: Wheel_r2
+    2300092: Wheel_R2 1
+    2300094: Wheel_r2 1
+    3300000: Barrel
+    3300002: Barrel 1
+    3300004: Barrel 2
+    3300006: Barrel 3
+    3300008: Barrel_L
+    3300010: Barrel_R
+    3300012: BarrelHolder
+    3300014: BarrelHolder 1
+    3300016: BarrelHolder 2
+    3300018: BarrelHolder 3
+    3300020: Body
+    3300022: Body 1
+    3300024: Body 2
+    3300026: Body 3
+    3300028: Boom1
+    3300030: Boom2
+    3300032: Bowsprit
+    3300034: Center
+    3300036: Flag
+    3300038: Grip1
+    3300040: Grip2
+    3300042: Grip3
+    3300044: Grip4
+    3300046: Grip5
+    3300048: Grip6
+    3300050: Hull
+    3300052: Mast1
+    3300054: Mast2
+    3300056: Ring
+    3300058: Sail1
+    3300060: Sail2
+    3300062: Stand
+    3300064: Wheel_L1
+    3300066: Wheel_L1 1
+    3300068: Wheel_L1 2
+    3300070: Wheel_L1 3
+    3300072: Wheel_L2
+    3300074: Wheel_L2 1
+    3300076: Wheel_L2 2
+    3300078: Wheel_L2 3
+    3300080: Wheel_R1
+    3300082: Wheel_R1 1
+    3300084: Wheel_R1 2
+    3300086: Wheel_R1 3
+    3300088: Wheel_R2
+    3300090: Wheel_r2
+    3300092: Wheel_R2 1
+    3300094: Wheel_r2 1
+    4300000: Hull
+    4300002: Mast1
+    4300004: Boom1
+    4300006: Sail1
+    4300008: Mast2
+    4300010: Boom2
+    4300012: Sail2
+    4300014: Flag
+    4300016: Bowsprit
+    4300018: Barrel_L
+    4300020: Barrel_R
+    4300022: Barrel
+    4300024: BarrelHolder
+    4300026: Body
+    4300028: Wheel_L1
+    4300030: Wheel_L2
+    4300032: Wheel_R1
+    4300034: Wheel_R2
+    4300036: Barrel
+    4300038: BarrelHolder
+    4300040: Body
+    4300042: Wheel_L1
+    4300044: Wheel_L2
+    4300046: Wheel_R1
+    4300048: Wheel_r2
+    4300050: Barrel
+    4300052: BarrelHolder
+    4300054: Body
+    4300056: Wheel_L1
+    4300058: Wheel_L2
+    4300060: Wheel_R1
+    4300062: Wheel_R2
+    4300064: Barrel
+    4300066: BarrelHolder
+    4300068: Body
+    4300070: Wheel_L1
+    4300072: Wheel_L2
+    4300074: Wheel_R1
+    4300076: Wheel_r2
+    4300078: Center
+    4300080: Ring
+    4300082: Grip1
+    4300084: Grip2
+    4300086: Grip3
+    4300088: Grip4
+    4300090: Grip5
+    4300092: Grip6
+    4300094: Stand
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
