@@ -6,8 +6,8 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: mat_red
-  m_Shader: {fileID: 4800000, guid: 0ac2b2e220b06014782866f6e2bfed36, type: 3}
+  m_Name: Black
+  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
   m_CustomRenderQueue: -1
@@ -102,7 +102,7 @@ Material:
       data:
         first:
           name: _Glossiness
-        second: .191
+        second: .5
       data:
         first:
           name: _BumpScale
@@ -127,10 +127,6 @@ Material:
         first:
           name: _Metallic
         second: 0
-      data:
-        first:
-          name: _EdgeWidth
-        second: .0617000014
     m_Colors:
       data:
         first:
@@ -139,12 +135,4 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: .856999993, g: 0, b: 0, a: 1}
-      data:
-        first:
-          name: _EdgeColor
-        second: {r: 0, g: 0, b: 0, a: 1}
-      data:
-        first:
-          name: _MainColor
-        second: {r: 1, g: 0, b: 0, a: 1}
+        second: {r: .0489999987, g: .0489999987, b: .0489999987, a: 1}
