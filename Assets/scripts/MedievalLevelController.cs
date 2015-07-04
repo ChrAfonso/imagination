@@ -19,6 +19,8 @@ public class MedievalLevelController : MonoBehaviour {
 	private int repairedBlocks;
 
 	public GameObject EnemyPrefab;
+	public int NumberOfEnemies = 20;
+	public float EnemyStartDistance = 100;
 
 	// Use this for initialization
 	void Start () {
@@ -44,7 +46,13 @@ public class MedievalLevelController : MonoBehaviour {
 
 	private void initEnemyArmy()
 	{
-		
+		for (int i = 0; i < NumberOfEnemies; i++)
+		{
+			GameObject enemy = GameObject.Instantiate(EnemyPrefab);
+			Vector3 position = Quaternion.AngleAxis(i*360/NumberOfEnemies, Vector3.up) * new Vector3(0, 0, EnemyStartDistance);
+			position.y = GameObject.Find("Terrain").GetComponent<Terrain>().SampleHeight(position) + 1;
+			enemy.transform.position = position;
+		}
 	}
 
 	void Update()

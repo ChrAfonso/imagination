@@ -8,6 +8,8 @@ TagManager:
   - BlockTrigger
   - PlacedItem
   - SubmarineCollider
+  - Terrain
+  - Castle
   layers:
   - Default
   - TransparentFX
