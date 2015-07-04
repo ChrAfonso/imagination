@@ -5,7 +5,9 @@ public class MedievalLevelController : MonoBehaviour {
 
 	public static MedievalLevelController instance { get; private set; }
 
-	private bool running = false;
+	private int state = 0;
+	private const int STATE_RUNNING = 0;
+	private const int STATE_GAMEOVER = 1;
 
 	public AudioClip music; // includes lose at the end (timed)
 	public AudioClip winMusic;
@@ -21,6 +23,9 @@ public class MedievalLevelController : MonoBehaviour {
 	public GameObject EnemyPrefab;
 	public int NumberOfEnemies = 20;
 	public float EnemyStartDistance = 100;
+
+	private float gameOverTimer;
+	private float gameOverResetDelay = 5;
 
 	// Use this for initialization
 	void Start () {
@@ -41,7 +46,7 @@ public class MedievalLevelController : MonoBehaviour {
 
 		initEnemyArmy();
 
-		running = true;
+		state = STATE_RUNNING;
 	}
 
 	private void initEnemyArmy()
@@ -52,16 +57,31 @@ public class MedievalLevelController : MonoBehaviour {
 			Vector3 position = Quaternion.AngleAxis(i*360/NumberOfEnemies, Vector3.up) * new Vector3(0, 0, EnemyStartDistance);
 			position.y = GameObject.Find("Terrain").GetComponent<Terrain>().SampleHeight(position) + 1;
 			enemy.transform.position = position;
+
+			// TEST
+			enemy.GetComponent<KnightEnemy>().Speed = EnemyStartDistance/music.length * 0.9f; // they should arrive at the climax of the music
 		}
 	}
 
 	void Update()
 	{
-		if (running)
+		if (state == STATE_RUNNING)
 		{
-			// TODO advance army
-
-			// TODO check army arrival (timer?)
+			// check army arrival (timer? music end?)
+			//if (musicPlayer.clip == music && !musicPlayer.isPlaying)
+			if (musicPlayer.clip == music && musicPlayer.time > music.length*0.95f)
+			{
+				Debug.Log("Game Over!");
+				enemiesArrived();
+			}
+		}
+		else if (state == STATE_GAMEOVER)
+		{
+			gameOverTimer += Time.deltaTime;
+			if (gameOverTimer >= gameOverResetDelay)
+			{
+				Application.LoadLevel("main_room"); // TODO replace this with camera transition
+			}
 		}
 	}
 
@@ -108,10 +128,24 @@ public class MedievalLevelController : MonoBehaviour {
 
 	void enemiesArrived()
 	{
-		// TODO disable input
+		// disable input
+		//Component.Destroy(GameObject.FindGameObjectWithTag("MainCamera").GetComponent<WalkCamera>());
 
-		// TODO return to main scene after delay
-		Application.LoadLevel("main_room");
+		state = STATE_GAMEOVER;
+		gameOverTimer = 0;
+
+		// destroy castle
+		GameObject[] wallBlocks = GameObject.FindGameObjectsWithTag("PlacedItem");
+		Debug.Log("wallBlocks: "+wallBlocks.Length);
+		foreach (GameObject wallBlock in wallBlocks)
+		{
+			Rigidbody rb = wallBlock.AddComponent<Rigidbody>();
+
+			// TODO add force?
+			//rb.AddExplosionForce(100, new Vector3(0, -10, 0), 100);
+			//rb.AddForce(new Vector3(Random.Range(-10, 10), 30, Random.Range(-10, 10)));
+			rb.velocity = -wallBlock.transform.position.normalized * Random.Range(0, 20) + new Vector3(Random.Range(-5, 5), Random.Range(0, 20), Random.Range(-5, 5));
+		}
 	}
 
 	void repairFinished()

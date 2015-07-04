@@ -17667,7 +17667,7 @@ MonoBehaviour:
   winMusic: {fileID: 0}
   sfxSlotIn: {fileID: 8300000, guid: c9c9105d883f2d74e8fcf6583da8b5f0, type: 3}
   EnemyPrefab: {fileID: 108946, guid: 40ecc6fb0466d6e4aadfd393299c4cc3, type: 2}
-  NumberOfEnemies: 20
+  NumberOfEnemies: 50
   EnemyStartDistance: 200
 --- !u!114 &11423680
 MonoBehaviour:
