@@ -18,6 +18,8 @@ public class MedievalLevelController : MonoBehaviour {
 	private GameObject[] blockTriggers;
 	private int repairedBlocks;
 
+	public GameObject EnemyPrefab;
+
 	// Use this for initialization
 	void Start () {
 		Debug.Log("Init Medieval Level Controller");
@@ -35,7 +37,14 @@ public class MedievalLevelController : MonoBehaviour {
 
 		sfxPlayer = gameObject.AddComponent<AudioSource>();
 
+		initEnemyArmy();
+
 		running = true;
+	}
+
+	private void initEnemyArmy()
+	{
+		
 	}
 
 	void Update()
