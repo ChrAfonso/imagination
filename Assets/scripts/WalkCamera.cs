@@ -19,8 +19,19 @@ public class WalkCamera : MonoBehaviour
 	float shiftAdd = 25f;  // Multiplied by how long shift is held.  Basically running.
 	float maxShift = 100f; // Maximum speed when holding shift.
 	float camSens = .35f;  // Camera sensitivity by mouse input.
+	public float JumpHeight = 8f;
 	private Vector3 lastMouse = new Vector3(Screen.width / 2, Screen.height / 2, 0); // Kind of in the middle of the screen, rather than at the top (play).
 	private float totalRun = 1.0f;
+	private Rigidbody rb;
+	private float distToGround;
+
+	void Start()
+	{
+
+		rb = GetComponent<Rigidbody> ();
+		distToGround = GetComponent<Collider>().bounds.extents.y;
+
+	}
 
 	void Update()
 	{
@@ -58,7 +69,11 @@ public class WalkCamera : MonoBehaviour
 		transform.Translate(p);
 		newPosition.x = transform.position.x;
 		newPosition.z = transform.position.z;
+		newPosition.y = transform.position.y;
 		transform.position = newPosition;
+
+		Jump ();
+
 	}
 
 	private Vector3 getDirection()
@@ -80,19 +95,28 @@ public class WalkCamera : MonoBehaviour
 		{
 			p_Velocity += new Vector3(1, 0, 0);
 		}
-		if (Input.GetKey(KeyCode.R))
-		{
-			p_Velocity += new Vector3(0, 1, 0);
-		}
-		if (Input.GetKey(KeyCode.F))
-		{
-			p_Velocity += new Vector3(0, -1, 0);
-		}
 		return p_Velocity;
 	}
 
 	public void resetRotation(Vector3 lookAt)
 	{
 		transform.LookAt(lookAt);
+	}
+
+	void Jump()
+	{
+
+		if (Input.GetKeyDown (KeyCode.Space)) {
+
+			Vector3 upwardPos = new Vector3 (0, JumpHeight, 0);
+			rb.velocity = upwardPos;
+
+		}
+
+	}
+
+	bool IsGrounded()
+	{
+		return Physics.Raycast(transform.position, -Vector3.up, distToGround + 0.3f);
 	}
 }
