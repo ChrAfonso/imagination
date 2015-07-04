@@ -10,6 +10,7 @@ TagManager:
   - SubmarineCollider
   - Terrain
   - Castle
+  - SubmarineFinish
   layers:
   - Default
   - TransparentFX

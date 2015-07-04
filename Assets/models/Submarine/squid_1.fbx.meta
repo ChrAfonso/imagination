@@ -1,0 +1,211 @@
+fileFormatVersion: 2
+guid: ed1aef9e0290569469f46864fb37cbb3
+timeCreated: 1436024133
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: joint10
+    100002: joint11
+    100004: joint5
+    100006: joint6
+    100008: joint6 1
+    100010: joint6 2
+    100012: joint6 3
+    100014: joint7
+    100016: joint7 1
+    100018: joint7 2
+    100020: joint7 3
+    100022: joint8
+    100024: joint8 1
+    100026: joint8 2
+    100028: joint8 3
+    100030: joint9
+    100032: Joint_body_1
+    100034: Joint_body_1 1
+    100036: Joint_body_1 2
+    100038: mesh_squid_leg_1
+    100040: mesh_squid_leg_2
+    100042: mesh_squid_leg_3
+    100044: mesh_squid_leg_4
+    100046: mesh_squid_main
+    100048: root
+    100050: //RootNode
+    400000: joint10
+    400002: joint11
+    400004: joint5
+    400006: joint6
+    400008: joint6 1
+    400010: joint6 2
+    400012: joint6 3
+    400014: joint7
+    400016: joint7 1
+    400018: joint7 2
+    400020: joint7 3
+    400022: joint8
+    400024: joint8 1
+    400026: joint8 2
+    400028: joint8 3
+    400030: joint9
+    400032: Joint_body_1
+    400034: Joint_body_1 1
+    400036: Joint_body_1 2
+    400038: mesh_squid_leg_1
+    400040: mesh_squid_leg_2
+    400042: mesh_squid_leg_3
+    400044: mesh_squid_leg_4
+    400046: mesh_squid_main
+    400048: root
+    400050: //RootNode
+    4300000: mesh_squid_main
+    4300002: mesh_squid_leg_2
+    4300004: mesh_squid_leg_3
+    4300006: mesh_squid_leg_1
+    4300008: mesh_squid_leg_4
+    7400000: Squid_Anim_1
+    9500000: //RootNode
+    13700000: mesh_squid_leg_1
+    13700002: mesh_squid_leg_2
+    13700004: mesh_squid_leg_3
+    13700006: mesh_squid_leg_4
+    13700008: mesh_squid_main
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Squid_Anim_1
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 40
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: joint5
+        weight: 1
+      - path: joint5/joint6 2
+        weight: 1
+      - path: joint5/joint6 2/joint7 2
+        weight: 1
+      - path: joint5/joint6 2/joint7 2/joint8 2
+        weight: 1
+      - path: joint9
+        weight: 1
+      - path: joint9/joint6 3
+        weight: 1
+      - path: joint9/joint6 3/joint7 3
+        weight: 1
+      - path: joint9/joint6 3/joint7 3/joint8 3
+        weight: 1
+      - path: joint10
+        weight: 1
+      - path: joint10/joint6
+        weight: 1
+      - path: joint10/joint6/joint7
+        weight: 1
+      - path: joint10/joint6/joint7/joint8
+        weight: 1
+      - path: joint11
+        weight: 1
+      - path: joint11/joint6 1
+        weight: 1
+      - path: joint11/joint6 1/joint7 1
+        weight: 1
+      - path: joint11/joint6 1/joint7 1/joint8 1
+        weight: 1
+      - path: mesh_squid_leg_1
+        weight: 1
+      - path: mesh_squid_leg_2
+        weight: 1
+      - path: mesh_squid_leg_3
+        weight: 1
+      - path: mesh_squid_leg_4
+        weight: 1
+      - path: mesh_squid_main
+        weight: 1
+      - path: root
+        weight: 1
+      - path: root/Joint_body_1
+        weight: 1
+      - path: root/Joint_body_1/Joint_body_1 1
+        weight: 1
+      - path: root/Joint_body_1/Joint_body_1 1/Joint_body_1 2
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 100
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
