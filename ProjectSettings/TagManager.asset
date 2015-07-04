@@ -13,6 +13,7 @@ TagManager:
   - SubmarineFinish
   - RacingTargetItem
   - RacingGUIText
+  - Enemy
   layers:
   - Default
   - TransparentFX
