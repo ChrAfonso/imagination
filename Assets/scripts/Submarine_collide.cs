@@ -12,5 +12,11 @@ public class Submarine_collide : MonoBehaviour {
 
 
 		}
+		if (collider.gameObject.tag == "SubmarineFinish") {
+			
+			Application.LoadLevel("main_room");
+
+		}
+
 	}
 }

@@ -8,6 +8,7 @@ TagManager:
   - BlockTrigger
   - PlacedItem
   - SubmarineCollider
+  - SubmarineFinish
   layers:
   - Default
   - TransparentFX
