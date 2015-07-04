@@ -65,7 +65,7 @@ GameObject:
   - 64: {fileID: 6469284}
   - 136: {fileID: 13672006}
   m_Layer: 0
-  m_Name: mesh_chicken__main
+  m_Name: Chicken
   m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
