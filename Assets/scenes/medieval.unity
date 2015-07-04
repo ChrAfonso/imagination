@@ -133,7 +133,7 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7388054eae4bc394cb9339677fd1d61d, type: 2}
   m_IsPrefabParent: 0
---- !u!1001 &704482813
+--- !u!1001 &887057985
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -146,7 +146,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400976, guid: 76206122c7cf83b4fa2208cfe875a6f9, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400976, guid: 76206122c7cf83b4fa2208cfe875a6f9, type: 2}
       propertyPath: m_LocalPosition.z
@@ -172,14 +172,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 21887034, guid: 76206122c7cf83b4fa2208cfe875a6f9, type: 2}
-      propertyPath: m_MaterialType
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 21887034, guid: 76206122c7cf83b4fa2208cfe875a6f9, type: 2}
-      propertyPath: m_MaterialTemplate
-      value: 
-      objectReference: {fileID: 2100000, guid: 3ceda4f333501024b81d499e0c6d9539, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 76206122c7cf83b4fa2208cfe875a6f9, type: 2}
   m_IsPrefabParent: 0
