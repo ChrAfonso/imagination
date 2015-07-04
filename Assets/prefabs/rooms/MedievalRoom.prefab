@@ -457,6 +457,7 @@ GameObject:
   - 136: {fileID: 13628588}
   - 54: {fileID: 5410700}
   - 114: {fileID: 11492018}
+  - 114: {fileID: 11414848}
   m_Layer: 0
   m_Name: WalkGrabCamera
   m_TagString: MainCamera
@@ -2816,6 +2817,18 @@ Light:
   m_ShadowRadius: 0
   m_ShadowAngle: 0
   m_AreaSize: {x: 1, y: 1}
+--- !u!114 &11414848
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 174952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2efcf5f1653bb4c22b25944263f6c8af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shader: {fileID: 4800000, guid: 29be0ca6b9e184749b84dc8cc1039988, type: 3}
 --- !u!114 &11423680
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2827,6 +2840,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc2568b30e0184b4f978e4189086df38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  JumpHeight: 8
 --- !u!114 &11492018
 MonoBehaviour:
   m_ObjectHideFlags: 1
