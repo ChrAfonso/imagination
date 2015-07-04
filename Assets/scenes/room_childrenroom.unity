@@ -530,6 +530,10 @@ Prefab:
       propertyPath: m_ReceiveShadows
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2300074, guid: 73eaf283b3486164cb7f59316b21fe4d, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2300134, guid: 73eaf283b3486164cb7f59316b21fe4d, type: 3}
   m_ParentPrefab: {fileID: 100100000, guid: 73eaf283b3486164cb7f59316b21fe4d, type: 3}
@@ -1791,8 +1795,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
   m_AABB:
-    m_Center: {x: -.00672149658, y: 0, z: -.0236046314}
-    m_Extent: {x: 4.12651825, y: 5.41820526, z: 6.30733442}
+    m_Center: {x: -.00134277344, y: 0, z: -.00472092628}
+    m_Extent: {x: .825302124, y: 1.08364105, z: 1.26146674}
   m_DirtyAABB: 0
 --- !u!1 &1780564197 stripped
 GameObject:
