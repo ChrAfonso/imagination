@@ -130,7 +130,7 @@ Material:
       data:
         first:
           name: _EdgeWidth
-        second: .0288999993
+        second: .0408000015
     m_Colors:
       data:
         first:
@@ -147,4 +147,4 @@ Material:
       data:
         first:
           name: _MainColor
-        second: {r: .191176474, g: .0830628723, b: 0, a: 1}
+        second: {r: .0878027752, g: .171712801, b: .213235319, a: 1}
