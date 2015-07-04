@@ -4,6 +4,7 @@ using System.Collections;
 public class CarryObjects : MonoBehaviour {
 
 	private GameObject mainCamera;
+	private GameObject objectUnderCursor;
 	private bool carrying;
 	private bool reelInCarriedObject = false; // drag it towards the carrier object
 	private GameObject carriedObject;
@@ -35,13 +36,30 @@ public class CarryObjects : MonoBehaviour {
 
 	}
 
+
+	void OnTriggerEnter(Collider other) 
+	{
+		if (other.transform.gameObject.tag == "Item") {
+			objectUnderCursor = other.transform.gameObject;
+		}
+	}
+
+	void OnTriggerExit(Collider other)
+	{
+		if (other.transform.gameObject == objectUnderCursor) {
+			objectUnderCursor = null;
+		}
+	}
+
 	void pickUp()
 	{
 
 		if (Input.GetButtonDown ("HoldObject"))
 	    {
-			if (CursorObject)
-			{ // Raycast to cursor
+			if (CursorObject && objectUnderCursor)
+			{
+				/*
+				// Raycast to cursor
 				Vector3 camToCursor = CursorObject.transform.position - mainCamera.transform.position;
 				Ray ray = new Ray(mainCamera.transform.position, camToCursor);
 				RaycastHit hit;
@@ -66,6 +84,12 @@ public class CarryObjects : MonoBehaviour {
 					}
 
 				}
+				*/
+				distance = (mainCamera.transform.position - objectUnderCursor.transform.position).magnitude;
+				carrying = true;
+				carriedObject = objectUnderCursor;
+				carriedObject.GetComponent<Rigidbody>().isKinematic = true;
+				Debug.Log("Grab!");
 			} else { // raycast fixed distance to screen center
 				float x = Screen.width / 2;
 				float y = Screen.height / 2;
@@ -114,6 +138,8 @@ public class CarryObjects : MonoBehaviour {
 		else
 		{
 			item.transform.position = mainCamera.transform.position + mainCamera.transform.forward * distance;
+			//item.transform.position = CursorObject.transform.position + mainCamera.transform.position;
+
 		}
 	}
 
@@ -123,10 +149,9 @@ public class CarryObjects : MonoBehaviour {
 		if (Input.GetButtonUp ("HoldObject")) { //  || (CursorObject && !CursorObject.GetComponent<Collider>().bounds.Intersects(carriedObject.GetComponent<Collider>().bounds))) {
 
 			carrying = false;
-			carriedObject = null;
 			distance = 0;
-			p.gameObject.GetComponent<Rigidbody>().isKinematic = false;
-			p = null;
+			carriedObject.GetComponent<Rigidbody>().isKinematic = false;
+			carriedObject = null;
 
 			Debug.Log("Drop!");
 		}
