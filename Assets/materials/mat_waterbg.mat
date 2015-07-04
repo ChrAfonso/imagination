@@ -6,8 +6,8 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: toon-red
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_Name: mat_waterbg
+  m_Shader: {fileID: 4800000, guid: 684e2912636ee464d88e3164e8c65afa, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
   m_CustomRenderQueue: -1
@@ -93,6 +93,10 @@ Material:
         second: .5
       data:
         first:
+          name: _Shininess
+        second: .141000003
+      data:
+        first:
           name: _Parallax
         second: .0199999996
       data:
@@ -127,6 +131,14 @@ Material:
         first:
           name: _Metallic
         second: 0
+      data:
+        first:
+          name: _RimPower
+        second: .910000026
+      data:
+        first:
+          name: _Alpha
+        second: .200000003
     m_Colors:
       data:
         first:
@@ -136,3 +148,15 @@ Material:
         first:
           name: _Color
         second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
+          name: _SpecColor
+        second: {r: .5, g: .5, b: .5, a: 1}
+      data:
+        first:
+          name: _ColorTint
+        second: {r: .174307972, g: .253221542, b: .382352948, a: 1}
+      data:
+        first:
+          name: _RimColor
+        second: {r: 0, g: .296551704, b: 1, a: 0}
