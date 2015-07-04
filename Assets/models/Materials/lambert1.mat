@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: lambert1
-  m_Shader: {fileID: 4800000, guid: 0ac2b2e220b06014782866f6e2bfed36, type: 3}
+  m_Shader: {fileID: 4800000, guid: a5e726d9d167bbb47a3486705a9dc6b8, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
   m_CustomRenderQueue: -1
@@ -121,15 +121,15 @@ Material:
         second: 0
       data:
         first:
+          name: _EmissionScaleUI
+        second: 0
+      data:
+        first:
           name: _Mode
         second: 0
       data:
         first:
           name: _Metallic
-        second: 0
-      data:
-        first:
-          name: _EmissionScaleUI
         second: 0
       data:
         first:
@@ -150,9 +150,9 @@ Material:
         second: {r: 1, g: 1, b: 1, a: 1}
       data:
         first:
-          name: _EdgeColor
-        second: {r: 0, g: 0, b: 0, a: 1}
-      data:
-        first:
           name: _MainColor
         second: {r: .191176474, g: .0830628723, b: 0, a: 1}
+      data:
+        first:
+          name: _EdgeColor
+        second: {r: 0, g: 0, b: 0, a: 1}

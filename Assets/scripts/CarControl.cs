@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class CarControl : MonoBehaviour {
 
@@ -8,6 +9,9 @@ public class CarControl : MonoBehaviour {
 	public float maxSpeed = 100.0f;
 
 	private bool brake;
+
+	public int num_targetItems = 4;
+	public int current_targetItems = 0;
 
 	GameObject o_Wheel_L1;
 	GameObject o_Wheel_L2;
@@ -21,6 +25,8 @@ public class CarControl : MonoBehaviour {
 
 	private float powerInput;
 	private Rigidbody carRigidBody;
+
+	public Text goalText;
 
 
 	void Awake () 
@@ -40,15 +46,21 @@ public class CarControl : MonoBehaviour {
 		carRigidBody = GetComponent<Rigidbody> ();
 		Vector3 center_of_mass = carRigidBody.centerOfMass;
 		center_of_mass = center_of_mass + (-1.0f * transform.up.normalized) * 2.0f;
+
+		GameObject obj = GameObject.FindGameObjectWithTag ("RacingGUIText");
+		goalText = obj.GetComponent<Text>();
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
 		brake = Input.GetKey ("space");
-		//Wheel_L1.motorTorque = 0.0f;
-		//Wheel_R1.motorTorque = 0.0f;
-
+		if (goalText) {
+			goalText.text = current_targetItems + " / " + num_targetItems + " Bauklötzen";
+		}
+		if (current_targetItems == num_targetItems) {
+			Application.LoadLevel("main_room");
+		}
 	}
 
 	void FixedUpdate ()
@@ -78,16 +90,8 @@ public class CarControl : MonoBehaviour {
 		float f = 1 - (maxSpeed - carRigidBody.velocity.magnitude) / maxSpeed;
 
 		carRigidBody.AddForce (transform.up.normalized * -1.0f * f * 0.09f);
-	//	c_Wheel_L1.sidewaysFriction = curve;
-
-	//	c_Wheel_L2.sidewaysFriction = curve;
-	//	c_Wheel_R1.sidewaysFriction = curve;
-	//	c_Wheel_R2.sidewaysFriction = curve;
 
 		if (!brake) {
-
-			//float f = 1.0f;
-			//(maxSpeed - carRigidBody.velocity.magnitude) / maxSpeed;
 
 			c_Wheel_L1.brakeTorque = 0.0f;
 			c_Wheel_L2.brakeTorque = 0.0f;
@@ -114,8 +118,6 @@ public class CarControl : MonoBehaviour {
 		
 		}
 
-
-
 		Vector3 pos;
 		Quaternion rot;
 
@@ -134,65 +136,15 @@ public class CarControl : MonoBehaviour {
 		c_Wheel_R2.GetWorldPose(out pos, out rot); 
 		o_Wheel_R2.transform.position = pos;
 		o_Wheel_R2.transform.rotation = rot;
-
-		//o_Wheel_L1.transform.rotation = c_Wheel_L1.GetWorldPose()
-	
+			
 	}
-		/*
-		if (brake) {
-			Wheel_L2.brakeTorque = 10.0f;
-			Wheel_L1.brakeTorque = 10.0f;
-			Wheel_R1.brakeTorque = 10.0f;
-			Wheel_R2.brakeTorque = 10.0f;
-			
-			Wheel_L2.motorTorque = 0.0f;
-			Wheel_R2.motorTorque = 0.0f;
 
-		} else {
-			Wheel_L2.brakeTorque = 0.0f;
-			Wheel_L1.brakeTorque = 0.0f;
-			Wheel_R1.brakeTorque = 0.0f;
-			Wheel_R2.brakeTorque = 0.0f;
-			
-		/*
-		//transform.forward = carRigidbody.velocity.normalized;
-
-		if (currentTurning != targetTurning) {
-			float turn = targetTurning - currentTurning;
-			if ((turn > 0 && turn < 0.1) || (turn < 0 && turn > -0.1)) {
-				turn = 0;
-				currentTurning = targetTurning;
-			}
-			currentTurning = currentTurning + turnSpeed * turn;
-
-			if (currentTurning > maxTurningDegree)
-				currentTurning = maxTurningDegree;
-
-			if (currentTurning < (maxTurningDegree * -1))
-				currentTurning = maxTurningDegree * -1;
-
-			leftWheel.GetComponent<Collider>.
-
-			Vector3 rotation = leftWheel.transform.eulerAngles;
-			rotation.y = currentTurning + transform.rotation.y;
-			leftWheel.transform.eulerAngles = rotation;
-			rightWheel.transform.eulerAngles = rotation;
+	void OnTriggerEnter(Collider other) 
+	{
+		if ((other.gameObject.tag == "RacingTargetItem")) {
+			current_targetItems ++;
+			Destroy(other.gameObject);
 		}
-
-		float currentAccel = powerInput * maxAcceleration;
-
-		float currentSpeed = carRigidbody.velocity.z;
-
-		Vector3 AccelVector = transform.forward * currentAccel;
-		Vector3 TurningVector = (transform.right * currentSpeed * 0.1f) * currentTurning; 
-
-		carRigidbody.AddForce (AccelVector + TurningVector);
-		carRigidbody.AddTorque (TurningVector);
-
-		Debug.Log ("current speed: " + currentSpeed);
-
 	}
-	 */
-
 
 }

@@ -11,6 +11,8 @@ TagManager:
   - Terrain
   - Castle
   - SubmarineFinish
+  - RacingTargetItem
+  - RacingGUIText
   layers:
   - Default
   - TransparentFX
