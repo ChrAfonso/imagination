@@ -142,29 +142,121 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 117371340}
   m_LocalRotation: {x: .408217937, y: -.234569728, z: .109381676, w: .875426054}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalPosition: {x: -500, y: 1.88786912, z: -.265965939}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
+  m_Father: {fileID: 931767462}
+  m_RootOrder: 3
+--- !u!1 &215577954 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100004, guid: 7c400a4c68b728f42a3f3fd80e1beb39, type: 3}
+  m_PrefabInternal: {fileID: 1118357599}
+--- !u!114 &215577958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 215577954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b98203bfaa6ca74dbf73e8fd5d053c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ballSize: .0500000007
+  ballMass: 2
+  shootPower: 1500
+  explo: {fileID: 100000, guid: bd943c792514675e464dfc7a8c26d3e0, type: 2}
+--- !u!4 &399930641 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 400070, guid: 7c400a4c68b728f42a3f3fd80e1beb39, type: 3}
+  m_PrefabInternal: {fileID: 1118357599}
+--- !u!1 &931767461
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 931767462}
+  m_Layer: 0
+  m_Name: PirateRoom
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &931767462
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 931767461}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 500, y: 1.11213088, z: .265965939}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1567368633}
+  - {fileID: 399930641}
+  - {fileID: 2109936753}
+  - {fileID: 117371342}
   m_Father: {fileID: 0}
   m_RootOrder: 1
+--- !u!1 &952792581 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100002, guid: 7c400a4c68b728f42a3f3fd80e1beb39, type: 3}
+  m_PrefabInternal: {fileID: 1118357599}
+--- !u!114 &952792585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 952792581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b98203bfaa6ca74dbf73e8fd5d053c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ballSize: .0500000007
+  ballMass: 2
+  shootPower: 1500
+  explo: {fileID: 100000, guid: bd943c792514675e464dfc7a8c26d3e0, type: 2}
+--- !u!1 &1115027185 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100006, guid: 7c400a4c68b728f42a3f3fd80e1beb39, type: 3}
+  m_PrefabInternal: {fileID: 1118357599}
+--- !u!114 &1115027189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1115027185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b98203bfaa6ca74dbf73e8fd5d053c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ballSize: .0500000007
+  ballMass: 2
+  shootPower: 1500
+  explo: {fileID: 100000, guid: bd943c792514675e464dfc7a8c26d3e0, type: 2}
 --- !u!1001 &1118357599
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 931767462}
     m_Modifications:
     - target: {fileID: 400070, guid: 7c400a4c68b728f42a3f3fd80e1beb39, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 500
+      value: -232
       objectReference: {fileID: 0}
     - target: {fileID: 400070, guid: 7c400a4c68b728f42a3f3fd80e1beb39, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0
+      value: -.870000005
       objectReference: {fileID: 0}
     - target: {fileID: 400070, guid: 7c400a4c68b728f42a3f3fd80e1beb39, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 233.729996
       objectReference: {fileID: 0}
     - target: {fileID: 400070, guid: 7c400a4c68b728f42a3f3fd80e1beb39, type: 3}
       propertyPath: m_LocalRotation.x
@@ -184,7 +276,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400070, guid: 7c400a4c68b728f42a3f3fd80e1beb39, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 7c400a4c68b728f42a3f3fd80e1beb39, type: 3}
       propertyPath: m_LocalPosition.z
@@ -224,6 +316,78 @@ MonoBehaviour:
   ballMass: 2
   shootPower: 1500
   explo: {fileID: 100000, guid: bd943c792514675e464dfc7a8c26d3e0, type: 2}
+--- !u!1 &1567368632
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 198884, guid: 76206122c7cf83b4fa2208cfe875a6f9, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1567368633}
+  - 218: {fileID: 1567368635}
+  - 154: {fileID: 1567368634}
+  m_Layer: 0
+  m_Name: Water Surface
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &1567368633
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 473512, guid: 76206122c7cf83b4fa2208cfe875a6f9, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1567368632}
+  m_LocalRotation: {x: -4.32977997e-17, y: .707106709, z: .707106829, w: -4.32978063e-17}
+  m_LocalPosition: {x: -500, y: -1.11213088, z: -.265965939}
+  m_LocalScale: {x: .499999762, y: .499999791, z: .49999997}
+  m_Children: []
+  m_Father: {fileID: 931767462}
+  m_RootOrder: 0
+--- !u!154 &1567368634
+TerrainCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 15460752, guid: 76206122c7cf83b4fa2208cfe875a6f9,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1567368632}
+  m_Material: {fileID: 0}
+  m_Enabled: 1
+  m_TerrainData: {fileID: 15600000, guid: c69f8631133d32c4595a6ee7aadee27e, type: 2}
+  m_EnableTreeColliders: 1
+--- !u!218 &1567368635
+Terrain:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 21887034, guid: 76206122c7cf83b4fa2208cfe875a6f9,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1567368632}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_TerrainData: {fileID: 15600000, guid: c69f8631133d32c4595a6ee7aadee27e, type: 2}
+  m_TreeDistance: 2000
+  m_TreeBillboardDistance: 50
+  m_TreeCrossFadeLength: 5
+  m_TreeMaximumFullLODCount: 50
+  m_DetailObjectDistance: 80
+  m_DetailObjectDensity: 1
+  m_HeightmapPixelError: 5
+  m_SplatMapDistance: 1000
+  m_HeightmapMaximumLOD: 0
+  m_CastShadows: 1
+  m_DrawHeightmap: 1
+  m_DrawTreesAndFoliage: 1
+  m_ReflectionProbeUsage: 1
+  m_MaterialType: 3
+  m_LegacySpecular:
+    serializedVersion: 2
+    rgba: 4286545791
+  m_LegacyShininess: .078125
+  m_MaterialTemplate: {fileID: 2100000, guid: edaa860a222a9bb49a0ce39005b86cc7, type: 2}
+  m_BakeLightProbesForTrees: 1
+  m_ScaleInLightmap: .0511999987
+  m_LightmapParameters: {fileID: 15203, guid: 0000000000000000f000000000000000, type: 0}
 --- !u!1 &1795135435
 GameObject:
   m_ObjectHideFlags: 0
@@ -259,7 +423,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1795135435}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b2f47be8a0281f449bbd047606f50433, type: 3}
   m_Name: 
@@ -294,7 +458,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
 --- !u!1 &2109936748
 GameObject:
   m_ObjectHideFlags: 0
@@ -308,7 +472,7 @@ GameObject:
   - 124: {fileID: 2109936750}
   - 81: {fileID: 2109936749}
   m_Layer: 0
-  m_Name: Main Camera
+  m_Name: Pirate Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -375,8 +539,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2109936748}
   m_LocalRotation: {x: .57357651, y: 0, z: 0, w: .819151998}
-  m_LocalPosition: {x: 499.299988, y: 1.29999995, z: .100000001}
+  m_LocalPosition: {x: -234.330002, y: 2.29999995, z: 233.139999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_Father: {fileID: 931767462}
+  m_RootOrder: 2
