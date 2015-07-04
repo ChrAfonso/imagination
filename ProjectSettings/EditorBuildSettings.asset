@@ -9,3 +9,11 @@ EditorBuildSettings:
     path: Assets/scenes/main_room.unity
   - enabled: 1
     path: Assets/scenes/medieval.unity
+  - enabled: 1
+    path: Assets/scenes/pirates.unity
+  - enabled: 1
+    path: Assets/scenes/racetrack.unity
+  - enabled: 1
+    path: Assets/scenes/rocket.unity
+  - enabled: 1
+    path: Assets/scenes/submarine_world.unity
