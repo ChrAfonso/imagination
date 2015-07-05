@@ -107,6 +107,9 @@ public class CannonFire : MonoBehaviour {
 		//Debug.Log ("Update");
 		if (Input.GetKey (KeyCode.Backspace)) {
 			InCannonView = false;
+			
+			
+			GameObject.Find ("WalkGrabCamera").GetComponent<WalkCamera>().enabled = true;
 			if(cannonView != null)
 			{
 				//GameObject.Destroy(cannonView);
@@ -210,7 +213,7 @@ public class CannonFire : MonoBehaviour {
 		sphere.name = "CannonBall";
 		//sphere.tag = "CannonBall";
 		CannonRigid = sphere.AddComponent<Rigidbody> ();
-		Vector3 ballPos = transform.position + cannonView.transform.forward*2f;
+		Vector3 ballPos = transform.position + cannonView.transform.forward*2.2f;
 		sphere.transform.position = ballPos;
 		sphere.transform.localScale -= new Vector3 (1 - scale, 1 - scale, 1 - scale);
 		CannonRigid.mass = mass;
@@ -234,7 +237,7 @@ public class CannonFire : MonoBehaviour {
 		}
 		active = gameObject;
 		//Debug.Log (active.name);
-
+		GameObject.Find ("WalkGrabCamera").GetComponent<WalkCamera>().enabled = false;
 		if (InCannonView) {
 			return;
 		}
@@ -250,7 +253,7 @@ public class CannonFire : MonoBehaviour {
 			CannonLook.ChangeAngles(-25F, 35F, 0F, 10F);
 		}
 		//canCam.transform.eulerAngles = new Vector3 (transform.eulerAngles.x, transform.eulerAngles.y - 90, transform.eulerAngles.z);
-		canCam.transform.position = transform.position+cannonView.transform.forward*1.5f;
+		canCam.transform.position = transform.position+cannonView.transform.forward*2.2f;
 	
 		cannonOri.enabled = true;
 		cannonView.enabled = true;

@@ -17,7 +17,7 @@ public class ShipHit : MonoBehaviour {
 
 			if(hits >= 3)
 			{
-				transform.position = new Vector3(transform.position.x, transform.position.y -.2f, transform.position.z);
+				transform.position = new Vector3(transform.position.x, transform.position.y -.3f, transform.position.z);
 				if(transform.position.y < 10)
 				{
 					//emi.emit = false;
@@ -39,8 +39,8 @@ public class ShipHit : MonoBehaviour {
 				active = false;
 					emi.emit = false;
 					//SinkShip();//GameObject.Destroy (gameObject);
-				//emi.maxSize = 5;
-					count = hits>=2 ? 80 : 20;
+				emi.maxSize = hits>=2 ? 20 : 5;
+					count = hits>=2 ? 40 : 20;
 				}
 			//}
 		}
@@ -64,7 +64,7 @@ public class ShipHit : MonoBehaviour {
 		//Debug.Log (coll.collider.gameObject.name);
 		
 		emi = boomIns.gameObject.GetComponent<EllipsoidParticleEmitter> ();
-		emi.maxSize = 2;
+		emi.maxSize = 5;
 
 
 	}
