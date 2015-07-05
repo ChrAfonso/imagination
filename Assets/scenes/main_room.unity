@@ -994,7 +994,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 129984, guid: 61564b21a66fbc544b511051c44ff75d, type: 2}
       propertyPath: m_TagString
-      value: Item
+      value: LevelStartItem
       objectReference: {fileID: 0}
     - target: {fileID: 6557764, guid: 61564b21a66fbc544b511051c44ff75d, type: 2}
       propertyPath: m_Enabled
@@ -1172,6 +1172,50 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.62486267, y: 2.62486267, z: .595501661}
   m_Center: {x: 2.98023224e-07, y: -1.1920929e-07, z: 4.47034836e-07}
+--- !u!1 &327761592
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 327761594}
+  - 114: {fileID: 327761593}
+  m_Layer: 0
+  m_Name: GameState
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &327761593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 327761592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c166bd06ff923b45b65b5b08022dd8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level_racing_icon: {fileID: 2070809981}
+  level_pirate_icon: {fileID: 890116192}
+  level_space_icon: {fileID: 1603827198}
+  level_mideval_icon: {fileID: 894593725}
+  level_submarine_icon: {fileID: 109471955}
+--- !u!4 &327761594
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 327761592}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 10.1559725, y: 288.21875, z: -2.3699286}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
 --- !u!1 &363305179
 GameObject:
   m_ObjectHideFlags: 0
@@ -2091,7 +2135,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 141952, guid: 319b21760a26f0348b9faa33e8e1b5a8, type: 2}
       propertyPath: m_TagString
-      value: Item
+      value: LevelStartItem
       objectReference: {fileID: 0}
     - target: {fileID: 6511070, guid: 319b21760a26f0348b9faa33e8e1b5a8, type: 2}
       propertyPath: m_Enabled
@@ -3104,7 +3148,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 185578, guid: 7dc33e66a486a4048898d7c4712e0b36, type: 2}
       propertyPath: m_TagString
-      value: Item
+      value: LevelStartItem
       objectReference: {fileID: 0}
     - target: {fileID: 6594366, guid: 7dc33e66a486a4048898d7c4712e0b36, type: 2}
       propertyPath: m_Enabled
@@ -4276,7 +4320,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 183346, guid: 11ce866a4691f564f925f6ef5d753033, type: 2}
       propertyPath: m_TagString
-      value: Item
+      value: LevelStartItem
       objectReference: {fileID: 0}
     - target: {fileID: 6578414, guid: 11ce866a4691f564f925f6ef5d753033, type: 2}
       propertyPath: m_Enabled
@@ -4738,6 +4782,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2332832, guid: 6a98d1b4a3d08d14b802db576c6be3b5, type: 2}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 436912, guid: 6a98d1b4a3d08d14b802db576c6be3b5, type: 2}
       propertyPath: m_LocalPosition.x
       value: -1.80999994
@@ -4776,7 +4824,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 106090, guid: 6a98d1b4a3d08d14b802db576c6be3b5, type: 2}
       propertyPath: m_TagString
-      value: Item
+      value: LevelStartItem
       objectReference: {fileID: 0}
     - target: {fileID: 6588100, guid: 6a98d1b4a3d08d14b802db576c6be3b5, type: 2}
       propertyPath: m_Enabled
@@ -4786,6 +4834,10 @@ Prefab:
       propertyPath: m_Center.z
       value: 1.55999994
       objectReference: {fileID: 0}
+    - target: {fileID: 2332832, guid: 6a98d1b4a3d08d14b802db576c6be3b5, type: 2}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6da8cf056b7811a4d9008820ef09a810, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6a98d1b4a3d08d14b802db576c6be3b5, type: 2}
   m_IsPrefabParent: 0

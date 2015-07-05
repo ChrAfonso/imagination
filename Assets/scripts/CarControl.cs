@@ -106,13 +106,7 @@ public class CarControl : MonoBehaviour {
 
 		c_Wheel_L1.steerAngle = targetTurning;
 		c_Wheel_R1.steerAngle = targetTurning;
-
-		float slip = (0.01f + 0.022f/(carRigidBody.velocity.magnitude+1.0f))*0.5f;
-
-
-		WheelFrictionCurve curve = c_Wheel_L1.sidewaysFriction;
-		curve.stiffness = slip;
-
+		
 
 		float currentSpeed = carRigidBody.velocity.magnitude;
 
@@ -137,6 +131,11 @@ public class CarControl : MonoBehaviour {
 			c_Wheel_L1.motorTorque = powerInput;
 			c_Wheel_R1.motorTorque = powerInput;
 
+			c_Wheel_L1.brakeTorque = 0f;
+			c_Wheel_L2.brakeTorque = 0f;
+			c_Wheel_R1.brakeTorque = 0f;
+			c_Wheel_R2.brakeTorque = 0f;
+			
 		} else {
 
 
@@ -180,6 +179,8 @@ public class CarControl : MonoBehaviour {
 			current_targetItems ++;
 			Destroy(other.gameObject);
 			pickup_Sound.PlayOneShot(pickup_Sound.clip);
+
+			Toolbox.Instance.level_racing_complete = true;
 		}
 	}
 
