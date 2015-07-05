@@ -16,6 +16,7 @@ public class MenuExit : MonoBehaviour {
 	void OnMouseDown()
 	{
 		
+		Time.timeScale = 1;
 		Application.LoadLevel("main_room");
 
 	}

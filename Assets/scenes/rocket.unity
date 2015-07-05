@@ -1700,6 +1700,48 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 458552, guid: 80738538a87cafd4baf64f9408615f5f, type: 2}
   m_PrefabInternal: {fileID: 587987881}
+--- !u!1001 &833144208
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 448542, guid: dee935f38947846449334abb68393597, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -10.0500002
+      objectReference: {fileID: 0}
+    - target: {fileID: 448542, guid: dee935f38947846449334abb68393597, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 448542, guid: dee935f38947846449334abb68393597, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 5876
+      objectReference: {fileID: 0}
+    - target: {fileID: 448542, guid: dee935f38947846449334abb68393597, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 448542, guid: dee935f38947846449334abb68393597, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 448542, guid: dee935f38947846449334abb68393597, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 448542, guid: dee935f38947846449334abb68393597, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 448542, guid: dee935f38947846449334abb68393597, type: 2}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: dee935f38947846449334abb68393597, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &856130583
 GameObject:
   m_ObjectHideFlags: 0
@@ -1946,6 +1988,7 @@ GameObject:
   - 124: {fileID: 1269814828}
   - 81: {fileID: 1269814827}
   - 82: {fileID: 1269814832}
+  - 114: {fileID: 1269814833}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2088,6 +2131,17 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+--- !u!114 &1269814833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1269814826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 024743c7c21c0e8459bdf852579f58bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1497551036
 GameObject:
   m_ObjectHideFlags: 0

@@ -549,6 +549,48 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.38758564, y: 3.35881186, z: 20.0000095}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1001 &537303351
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 448542, guid: dee935f38947846449334abb68393597, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -10.0500002
+      objectReference: {fileID: 0}
+    - target: {fileID: 448542, guid: dee935f38947846449334abb68393597, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 448542, guid: dee935f38947846449334abb68393597, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 1064
+      objectReference: {fileID: 0}
+    - target: {fileID: 448542, guid: dee935f38947846449334abb68393597, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 448542, guid: dee935f38947846449334abb68393597, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 448542, guid: dee935f38947846449334abb68393597, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 448542, guid: dee935f38947846449334abb68393597, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 448542, guid: dee935f38947846449334abb68393597, type: 2}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: dee935f38947846449334abb68393597, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &589244853
 GameObject:
   m_ObjectHideFlags: 0
@@ -1242,7 +1284,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 492468, guid: e74c23d94d4ec04498cc753d2eaf6e09, type: 2}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11483504, guid: e74c23d94d4ec04498cc753d2eaf6e09, type: 2}
       propertyPath: maxSpeed
@@ -1566,6 +1608,7 @@ GameObject:
   - 82: {fileID: 1342149263}
   - 114: {fileID: 1342149265}
   - 114: {fileID: 1342149264}
+  - 114: {fileID: 1342149266}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1753,9 +1796,20 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1342149255}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: db7d213700f657840b9f327a0336ed49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1342149266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1342149255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 024743c7c21c0e8459bdf852579f58bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1428479561 stripped

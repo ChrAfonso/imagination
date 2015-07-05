@@ -507,6 +507,7 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: .0219999999
+  m_StereoMirrorMode: 0
 --- !u!1 &393293475 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100036, guid: 7c400a4c68b728f42a3f3fd80e1beb39, type: 3}
@@ -696,6 +697,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 931767462}
+  - 114: {fileID: 931767463}
   m_Layer: 0
   m_Name: PirateRoom
   m_TagString: Untagged
@@ -721,6 +723,17 @@ Transform:
   - {fileID: 363493487}
   m_Father: {fileID: 0}
   m_RootOrder: 1
+--- !u!114 &931767463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 931767461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 024743c7c21c0e8459bdf852579f58bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &952792581 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100002, guid: 7c400a4c68b728f42a3f3fd80e1beb39, type: 3}
@@ -1722,6 +1735,48 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 1
   m_Mesh: {fileID: 4300056, guid: 7c400a4c68b728f42a3f3fd80e1beb39, type: 3}
+--- !u!1001 &1977192052
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 448542, guid: dee935f38947846449334abb68393597, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -10.0500002
+      objectReference: {fileID: 0}
+    - target: {fileID: 448542, guid: dee935f38947846449334abb68393597, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 448542, guid: dee935f38947846449334abb68393597, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 983
+      objectReference: {fileID: 0}
+    - target: {fileID: 448542, guid: dee935f38947846449334abb68393597, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 448542, guid: dee935f38947846449334abb68393597, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 448542, guid: dee935f38947846449334abb68393597, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 448542, guid: dee935f38947846449334abb68393597, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 448542, guid: dee935f38947846449334abb68393597, type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: dee935f38947846449334abb68393597, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &2035965792 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100034, guid: 7c400a4c68b728f42a3f3fd80e1beb39, type: 3}
@@ -1858,6 +1913,7 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: .0219999999
+  m_StereoMirrorMode: 0
 --- !u!4 &2109936753
 Transform:
   m_ObjectHideFlags: 0
