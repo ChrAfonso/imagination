@@ -15,6 +15,7 @@ TagManager:
   - RacingGUIText
   - Enemy
   - LevelStartItem
+  - UsableCanon
   layers:
   - Default
   - TransparentFX

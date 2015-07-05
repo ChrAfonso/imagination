@@ -162,6 +162,7 @@ public class MedievalLevelController : MonoBehaviour {
 	{
 		// TODO notify global game manager of success
 
+		Toolbox.Instance.level_mideval_complete = true;
 		Application.LoadLevel("main_room");
 	}
 }
