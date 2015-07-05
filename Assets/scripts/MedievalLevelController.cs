@@ -8,11 +8,13 @@ public class MedievalLevelController : MonoBehaviour {
 	private int state = 0;
 	private const int STATE_RUNNING = 0;
 	private const int STATE_GAMEOVER = 1;
+	private const int STATE_WIN = 2;
 
 	public AudioClip music; // includes lose at the end (timed)
 	public AudioClip winMusic;
 
 	public AudioClip sfxSlotIn;
+	public AudioClip sfxKnightMove;
 
 	private AudioSource musicPlayer;
 	private AudioSource sfxPlayer;
@@ -23,6 +25,8 @@ public class MedievalLevelController : MonoBehaviour {
 	public GameObject EnemyPrefab;
 	public int NumberOfEnemies = 20;
 	public float EnemyStartDistance = 100;
+
+	private float gameOverTimestamp = 80;
 
 	private float gameOverTimer;
 	private float gameOverResetDelay = 5;
@@ -68,8 +72,7 @@ public class MedievalLevelController : MonoBehaviour {
 		if (state == STATE_RUNNING)
 		{
 			// check army arrival (timer? music end?)
-			//if (musicPlayer.clip == music && !musicPlayer.isPlaying)
-			if (musicPlayer.clip == music && musicPlayer.time > music.length*0.95f)
+			if (musicPlayer.clip == music && (musicPlayer.time > gameOverTimestamp || !musicPlayer.isPlaying))
 			{
 				Debug.Log("Game Over!");
 				enemiesArrived();
@@ -80,7 +83,14 @@ public class MedievalLevelController : MonoBehaviour {
 			gameOverTimer += Time.deltaTime;
 			if (gameOverTimer >= gameOverResetDelay)
 			{
-				Application.LoadLevel("main_room"); // TODO replace this with camera transition
+				exitToMainRoom(false);
+			}
+		}
+		else if (state == STATE_WIN)
+		{
+			if (!musicPlayer.isPlaying) // win music finished 
+			{
+				exitToMainRoom(true);
 			}
 		}
 	}
@@ -120,7 +130,7 @@ public class MedievalLevelController : MonoBehaviour {
 		// TODO check repair finished
 		Debug.Log("repairedBlocks: "+repairedBlocks);
 
-		if (repairedBlocks == blockTriggers.Length)
+		if (repairedBlocks >= blockTriggers.Length && state != STATE_GAMEOVER)
 		{
 			repairFinished();
 		}
@@ -150,19 +160,31 @@ public class MedievalLevelController : MonoBehaviour {
 
 	void repairFinished()
 	{
-		// TODO play win music
+		state = STATE_WIN;
+
+		// play win music
+		musicPlayer.clip = winMusic;
+		musicPlayer.Play();
+
+		// Stop them
+		foreach (GameObject knight in GameObject.FindGameObjectsWithTag("Enemy"))
+		{
+			Component.Destroy(knight.GetComponent<KnightEnemy>());
+			knight.GetComponent<Rigidbody>().velocity = Vector3.zero;
+			Component.Destroy(knight.GetComponent<Animator>());
+		}
 
 		// TODO show success message?
-
-		// TODO return to main room after winMusic played
-		onWinMusicFinished();
 	}
 
-	void onWinMusicFinished()
+	void exitToMainRoom(bool success)
 	{
-		// TODO notify global game manager of success
+		// notify global game manager of success
+		if (success)
+		{
+			Toolbox.Instance.level_mideval_complete = true;
+		}
 
-		Toolbox.Instance.level_mideval_complete = true;
 		Application.LoadLevel("main_room");
 	}
 }
