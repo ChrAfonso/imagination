@@ -18,7 +18,8 @@ public class CannonFire : MonoBehaviour {
 	Vector3 newpos;
 	Vector3 dir;
 	Rigidbody CannonRigid;
-	GameObject active;
+	public GameObject active;
+	public bool activate;
 	
 	// Use this for initialization
 	void Start () {
@@ -37,6 +38,7 @@ public class CannonFire : MonoBehaviour {
 			canCam.name = "CannonCam";
 			cannonView = canCam.AddComponent<Camera> ();
 			cannonLook = canCam.AddComponent<CannonLook>();	
+			//canCam.transform.position = new Vector3(transform.position.x, transform.position.y + 3, transform.position.z 
 			canCam.transform.eulerAngles = new Vector3 (transform.eulerAngles.x, transform.eulerAngles.y - 90, transform.eulerAngles.z);
 
 		} else {
@@ -101,9 +103,8 @@ public class CannonFire : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if (gameObject != active) {
-			return;
-		}
+
+
 		//Debug.Log ("Update");
 		if (Input.GetKey (KeyCode.Backspace)) {
 			InCannonView = false;
@@ -232,33 +233,31 @@ public class CannonFire : MonoBehaviour {
 
 
 	void OnMouseDown () {//Debug.Log (gameObject.name);
-		if (active != null) {
-			return;
-		}
-		active = gameObject;
-		//Debug.Log (active.name);
-		GameObject.Find ("WalkGrabCamera").GetComponent<WalkCamera>().enabled = false;
-		if (InCannonView) {
-			return;
-		}
-		InCannonView = true;
+			if (active != null) {
+				return;
+			}
+			active = gameObject;
+			//Debug.Log (active.name);
+			GameObject.Find ("WalkGrabCamera").GetComponent<WalkCamera> ().enabled = false;
+			if (InCannonView) {
+				return;
+			}
+			InCannonView = true;
 
-		if (gameObject.name == "Barrel 2"){
-			//canCam.transform.eulerAngles = new Vector3 (transform.eulerAngles.x, transform.eulerAngles.y + 90, transform.eulerAngles.z);
+			if (active.gameObject.name == "Barrel 2") {
+				//canCam.transform.eulerAngles = new Vector3 (transform.eulerAngles.x, transform.eulerAngles.y + 90, transform.eulerAngles.z);
 			
-			CannonLook.ChangeAngles(155F, 205F, 0F, 10F);
-		} else {
-			//canCam.transform.eulerAngles = new Vector3 (transform.eulerAngles.x, transform.eulerAngles.y - 180, transform.eulerAngles.z);
+				CannonLook.ChangeAngles (155F, 205F, 0F, 10F);
+			} else {
+				//canCam.transform.eulerAngles = new Vector3 (transform.eulerAngles.x, transform.eulerAngles.y - 180, transform.eulerAngles.z);
 			
-			CannonLook.ChangeAngles(-25F, 35F, 0F, 10F);
-		}
-		//canCam.transform.eulerAngles = new Vector3 (transform.eulerAngles.x, transform.eulerAngles.y - 90, transform.eulerAngles.z);
-		canCam.transform.position = transform.position+cannonView.transform.forward*2.2f;
+				CannonLook.ChangeAngles (-25F, 35F, 0F, 10F);
+			}
+			//canCam.transform.eulerAngles = new Vector3 (transform.eulerAngles.x, transform.eulerAngles.y - 90, transform.eulerAngles.z);
+			canCam.transform.position = transform.position + cannonView.transform.forward * 2.2f;
 	
-		cannonOri.enabled = true;
-		cannonView.enabled = true;
-
-
+			cannonOri.enabled = true;
+			cannonView.enabled = true;
 
 	}
 }

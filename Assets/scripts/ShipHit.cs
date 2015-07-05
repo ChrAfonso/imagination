@@ -28,6 +28,7 @@ public class ShipHit : MonoBehaviour {
 				}*/
 					GameObject.Destroy (gameObject);
 				Application.LoadLevel("main_room");
+				Toolbox.Instance.level_pirate_complete = true;
 				}
 
 			}

@@ -5,7 +5,14 @@ public class explosion_kill : MonoBehaviour {
 
 	public float TimetoKill;
 	public float DownSpeed;
-	
+	public AudioSource audioPlayer;
+
+	void Awake()
+	{
+		audioPlayer = GetComponent<AudioSource> ();
+		if (audioPlayer)
+			audioPlayer.PlayOneShot (audioPlayer.clip);
+	}
 
 	void Update () {
 	
@@ -28,6 +35,7 @@ public class explosion_kill : MonoBehaviour {
 			if (!GameObject.Find("Mothership"))
 			{
 
+				Toolbox.Instance.level_space_complete = true;
 				Application.LoadLevel("main_room");
 
 			}

@@ -17,6 +17,8 @@ public class CarryObjects : MonoBehaviour {
 	private bool drawHand;
 	private bool drawing;
 
+	private bool use;
+
 	public GameObject CursorObject;
 
 	void Start () {
@@ -62,6 +64,13 @@ public class CarryObjects : MonoBehaviour {
 
 		}
 
+		if (use) 
+		{
+
+			GUI.DrawTexture(HandPos, HandGrab);
+
+		}
+
 
 
 		if (drawing) 
@@ -86,6 +95,11 @@ public class CarryObjects : MonoBehaviour {
 			objectUnderCursor = other.transform.gameObject;
 			drawHand = true;
 		}
+
+		if (other.gameObject.tag == "UsableCanon") {
+			use = true;
+		}
+
 	}
 
 	void OnTriggerExit(Collider other)
@@ -94,6 +108,11 @@ public class CarryObjects : MonoBehaviour {
 			objectUnderCursor = null;
 			drawHand = false;
 		}
+	
+		if (other.gameObject.tag == "UsableCanon") {
+			//use = false;
+		}
+
 	}
 
 	void pickUp()
