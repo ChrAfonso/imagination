@@ -22,16 +22,22 @@ public class CannonLook : MonoBehaviour {
 	public float sensitivityX = 15F;
 	public float sensitivityY = 15F;
 
-	public float minimumX = -30F;
-	public float maximumX = 30F;
+	public float minimumX = -25F;
+	public float maximumX = 35F;
 
 	public float minimumY = 0F;
-	public float maximumY = 30F;
+	public float maximumY = 10F;
 
 	float rotationX = 0F;
 	float rotationY = 0F;
 	
 	Quaternion originalRotation;
+
+	public static CannonLook instance;
+
+	void Awake(){
+		instance = this;
+	}
 
 	void Update ()
 	{
@@ -66,7 +72,15 @@ public class CannonLook : MonoBehaviour {
 			transform.localRotation = originalRotation * yQuaternion;
 		}
 	}
-	
+
+	public static void ChangeAngles(float min_x, float max_x, float min_y, float max_y)
+	{
+		instance.minimumX = min_x;
+		instance.maximumX = max_x;
+		instance.minimumY = min_y;
+		instance.maximumY = max_y;
+	}
+
 	void Start ()
 	{
 		// Make the rigid body not change rotation

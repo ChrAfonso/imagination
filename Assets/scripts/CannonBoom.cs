@@ -17,10 +17,10 @@ public class CannonBoom : MonoBehaviour {
 			//Debug.Log(count);
 			if (count <= 0) {
 				emi.emit = false;
-				GameObject.Destroy (this);
+				GameObject.Destroy (gameObject);
+				
+				count = 20;
 			}
-		} else {
-			count = 20;
 		}
 	}
 
@@ -32,17 +32,22 @@ public class CannonBoom : MonoBehaviour {
 	}
 
 	void OnCollisionEnter(Collision coll)
-	{Debug.Log (coll.collider.gameObject.name);
+	{//Debug.Log (coll.collider.gameObject.name);
 
 		if (coll.collider.gameObject.name.Equals ("Barrel 1") ||
 		    coll.collider.gameObject.name.Equals ("Barrel 2") ||
 		    coll.collider.gameObject.name.Equals ("Barrel 3") ||
-		    coll.collider.gameObject.name.Equals ("Barrel 4")) {
+		    coll.collider.gameObject.name.Equals ("Barrel")) {
 			return;
 		}
 		if (coll.collider.gameObject.name.Equals ("Water Surface")) {
-			GameObject.Destroy(this);
+			if(emi == null)
+			{
+				GameObject.Destroy(gameObject);
+			}
+			return;
 		}
+		return;
 		GameObject boom = CannonFire.expl;
 		//Debug.Log ("Test");
 

@@ -18,37 +18,93 @@ public class CannonFire : MonoBehaviour {
 	Vector3 newpos;
 	Vector3 dir;
 	Rigidbody CannonRigid;
-	
+	GameObject active;
 	
 	// Use this for initialization
 	void Start () {
 		//Debug.Log ("Start");
 		expl = explo;
 		power = shootPower;
-		
+
 		cannonOri = gameObject.AddComponent<CannonLook>();
 		cannonOri.enabled = false;
 
-		canCam = new GameObject();
-		cannonView = canCam.AddComponent<Camera>();
-		canCam.name = "CannonCam";
+		
+		canCam = GameObject.Find ("CannonCam");
+		if (canCam == null) {
+
+			canCam = new GameObject ();
+			canCam.name = "CannonCam";
+			cannonView = canCam.AddComponent<Camera> ();
+			cannonLook = canCam.AddComponent<CannonLook>();	
+			canCam.transform.eulerAngles = new Vector3 (transform.eulerAngles.x, transform.eulerAngles.y - 90, transform.eulerAngles.z);
+
+		} else {
+			cannonView = canCam.GetComponent<Camera> ();
+		}
+
+		switch (gameObject.name) {
+		case "Barrel": CannonLook.ChangeAngles(-35F, 25F, 0F, 10F);
+			break;
+		case "Barrel 1": CannonLook.ChangeAngles(-35F, 25F, 0F, 10F);
+			break;
+		case "Barrel 2": CannonLook.ChangeAngles(155F, 205F, 0F, 10F);
+			break;
+		case "Barrel 3": CannonLook.ChangeAngles(155F, 205F, 0F, 10F);
+			break;
+		}
+
+
+		/*
+
+		if (gameObject.name == ("Barrel 2") ||
+		    gameObject.name == ("Barrel 3")) {
+			canCam.transform.eulerAngles = new Vector3 (transform.eulerAngles.x, transform.eulerAngles.y + 90, transform.eulerAngles.z);
+		} else {	
+			//Debug.Log (gameObject.name);
+			canCam.transform.eulerAngles = new Vector3 (transform.eulerAngles.x, transform.eulerAngles.y - 90, transform.eulerAngles.z);
+		}
+
+		*/
+
+
+
+
+	//	canCam.transform.eulerAngles = new Vector3 (transform.eulerAngles.x, transform.eulerAngles.y - 90, transform.eulerAngles.z);
+
+
+//		if (cannonView == null) {
+//		}
 		//canCam.transform.parent = transform;
-		canCam.transform.eulerAngles = new Vector3 (transform.eulerAngles.x, transform.eulerAngles.y - 90, transform.eulerAngles.z);
+
+		/*---------------------------------------------------------
+		if (gameObject.name == ("Barrel 2") ||
+			gameObject.name == ("Barrel 3")) {
+			canCam.transform.eulerAngles = new Vector3 (transform.eulerAngles.x, transform.eulerAngles.y + 90, transform.eulerAngles.z);
+		} else {	
+			canCam.transform.eulerAngles = new Vector3 (transform.eulerAngles.x, transform.eulerAngles.y - 90, transform.eulerAngles.z);
+		}
+
+
 		canCam.transform.position = transform.position;
-		cannonLook = canCam.AddComponent<CannonLook>();
+
+-------------------------------------------*/
 		//canCam.SetActive (false);
 		cannonView.enabled = false;
 
-		if (GameObject.FindObjectOfType<MeshCollider>() == null) {
+		if (gameObject.GetComponent<MeshCollider>() == null) {
 			gameObject.AddComponent<MeshCollider>();
 		}
 	}
-	
+
+
 	// Update is called once per frame
 	void Update () {
-		
+		if (gameObject != active) {
+			return;
+		}
 		//Debug.Log ("Update");
-		if (Input.GetKey (KeyCode.Escape)) {
+		if (Input.GetKey (KeyCode.Backspace)) {
 			InCannonView = false;
 			if(cannonView != null)
 			{
@@ -63,10 +119,11 @@ public class CannonFire : MonoBehaviour {
 
 			}
 			cannonOri.enabled = false;
+			active = null;
 		}
 
 		
-		GameObject ball = GameObject.FindGameObjectWithTag ("CannonBall");
+		GameObject ball = GameObject.Find("CannonBall");
 	
 		if (Shooting) {
 			if (ball == null) {
@@ -89,7 +146,7 @@ public class CannonFire : MonoBehaviour {
 			}
 			return;
 		}
-//		GameObject.Find("Test Sphere").GetComponent<Rigidbody> ().AddForce (cannonView.transform.forward * power);
+
 		if (Input.GetKey (KeyCode.Space)) {
 			if (ball == null) {
 				power = shootPower;
@@ -106,17 +163,6 @@ public class CannonFire : MonoBehaviour {
 			Shooting=true;
 			
 			CannonRigid.AddForce (cannonView.transform.forward * power);
-			//Vector3 cam = new Vector3(cannonView.rect.center.x,cannonView.rect.center.y, cannonView.farClipPlane);
-			//Debug.DrawLine(cannonView.transform.position,cam,Color.white, 100000f);
-			//Gizmos.DrawRay(cannonView.ScreenPointToRay(ball.transform.position));
-
-			/*
-			Debug.DrawLine(deb,ball.transform.position,Color.white, 100000f);
-			deb=ball.transform.position;
-*/
-			//Vector3 dir2 = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y - 90, transform.eulerAngles.z);
-			//Debug.Log(Input.mousePosition);
-		//	Debug.DrawRay(transform.position, dir2, Color.white, 1000000f);
 
 
 /*----------------------------------------------------------
@@ -127,40 +173,7 @@ public class CannonFire : MonoBehaviour {
 
 
 
-			//Debug.DrawLine(transform.forward,transform.forward*10,Color.white, 100000f);
 
-			/*
-			GameObject sphere = GameObject.CreatePrimitive (PrimitiveType.Sphere);
-			sphere.transform.position = ball.transform.position;
-			sphere.transform.localScale = ball.transform.localScale;
-			*/
-
-			//SphereCollider coll = ball.GetComponent<SphereCollider> ();
-
-
-			//-----------------------------------------------
-			//ball.GetComponent<Rigidbody> ().AddForce(dir);
-		
-			//Vector3 controlDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-			//Debug.Log (cannonView.transform.TransformDirection(controlDirection));
-
-
-			//ball.GetComponent<Rigidbody>().WakeUp ();
-			//float vel_y = ball.GetComponent<Rigidbody>().velocity.y-.1f;
-		
-			//ball.GetComponent<Rigidbody>().velocity = new Vector3(ball.GetComponent<Rigidbody>().velocity.x,vel_y,ball.GetComponent<Rigidbody>().velocity.z);
-			//Debug.Log (newpos);
-
-
-			/*
-		Mesh mesh = GetComponent<MeshFilter>().mesh;
-		
-		mesh.RecalculateNormals ();
-		Vector3[] normals = mesh.normals;
-		Debug.DrawRay (transform.position, normals [0]);
-
-		Debug.Log (normals[0]);
-		*/
 
 
 
@@ -181,9 +194,12 @@ public class CannonFire : MonoBehaviour {
 	}
 
 	void ShootCannon () {
-
+		/*
+		if (ShipHit.explosion) {
+			return;
+		}*/
 		//Debug.Log ("Space Clicked!");
-		if (GameObject.FindGameObjectWithTag ("CannonBall") != null) {
+		if (GameObject.Find ("CannonBall") != null) {
 			return;
 		}
 		float scale = ballSize;
@@ -191,9 +207,9 @@ public class CannonFire : MonoBehaviour {
 		//Vector3 scaleVec = Vector3 (scale, scale, scale);
 		GameObject sphere = GameObject.CreatePrimitive (PrimitiveType.Sphere);
 		sphere.name = "CannonBall";
-		sphere.tag = "CannonBall";
+		//sphere.tag = "CannonBall";
 		CannonRigid = sphere.AddComponent<Rigidbody> ();
-		Vector3 ballPos = transform.position + cannonView.transform.forward*.03f;
+		Vector3 ballPos = transform.position + cannonView.transform.forward*.3f;
 		sphere.transform.position = ballPos;
 		sphere.transform.localScale -= new Vector3 (1 - scale, 1 - scale, 1 - scale);
 		CannonRigid.mass = mass;
@@ -207,45 +223,38 @@ public class CannonFire : MonoBehaviour {
 
 	}
 
-	void OnMouseDown () {//Debug.Log ("Click");
+
+
+
+
+	void OnMouseDown () {//Debug.Log (gameObject.name);
+		if (active != null) {
+			return;
+		}
+		active = gameObject;
+		//Debug.Log (active.name);
+
 		if (InCannonView) {
 			return;
 		}
 		InCannonView = true;
-		//GameObject.CreatePrimitive (PrimitiveType.Capsule);
 
+		if (gameObject.name == "Barrel 2" ||
+			gameObject.name == "Barrel 3") {
+			canCam.transform.eulerAngles = new Vector3 (transform.eulerAngles.x, transform.eulerAngles.y + 90, transform.eulerAngles.z);
 
-		//canCam.SetActive (true);
+		} else {
+			canCam.transform.eulerAngles = new Vector3 (transform.eulerAngles.x, transform.eulerAngles.y - 90, transform.eulerAngles.z);
+
+		}
+		//canCam.transform.eulerAngles = new Vector3 (transform.eulerAngles.x, transform.eulerAngles.y - 90, transform.eulerAngles.z);
+		canCam.transform.position = transform.position;
+	
 		cannonOri.enabled = true;
 		cannonView.enabled = true;
-		//Debug.Log (transform.childCount);
-
-		//canCam.transform.po
-
-		/*
-		cannonView = gameObject.AddComponent<Camera> ();
-		cannonLook = cannonView.gameObject.AddComponent<CannonLook>();
-*/
 
 
 
-
-		/*
-		GameObject sphere2 = GameObject.CreatePrimitive (PrimitiveType.Sphere);
-		sphere2.transform.position = new Vector3(transform.position.x-.005f,transform.position.y,transform.position.z);
-		sphere2.transform.localScale -= new Vector3(1-scale, 1-scale, 1-scale);
-		*/
-
-
-
-		//cb_rb.isKinematic = true;
-
-		//cb_rb.transform.localScale -= new Vector3(1-scale, 1-scale, 1-scale);
-		//cb_rb.velocity += Vector3.forward;
-		//cb_rb.AddForce (Vector3.forward * 500);
-		//sphere.GetComponent<Rigidbody>().AddForce(Vector3.forward*40,ForceMode.Impulse);
-		//sphere.transform.localScale.Scale(Vector3(.25f,.25f,.25f));
-		//Debug.Log (cb_rb.velocity);
 	}
 }
 
