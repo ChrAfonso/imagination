@@ -17,6 +17,8 @@ public class RocketMovement : MonoBehaviour {
 	public GameObject shot;
 	public Transform shotSpawner;
 	public GameObject explosion;
+	public AudioSource audioPlayer;
+	public AudioClip pew;
 
 	Quaternion originalRotation;
 
@@ -103,6 +105,8 @@ public class RocketMovement : MonoBehaviour {
 			Bullet = Instantiate(shot, shotSpawner.transform.position, shotSpawner.rotation) as GameObject;
 			Rigidbody rb = Bullet.GetComponent<Rigidbody>();
 			rb.AddForce(Vector3.up * 3000);
+			if (audioPlayer && pew)
+				audioPlayer.PlayOneShot(pew);
 
 		}
 
