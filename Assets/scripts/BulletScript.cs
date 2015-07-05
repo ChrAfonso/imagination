@@ -28,8 +28,15 @@ public class BulletScript : MonoBehaviour {
 			}
 			else
 			{
-				//
+				collider.gameObject.GetComponent<MotherShipScript>().health -= BulletDamage;
+				Destroy(gameObject);
 			}
+
+		}
+		if (collider.gameObject.name == "bullet_enemy_boss") 
+		{
+
+			Destroy(gameObject);
 
 		}
 
