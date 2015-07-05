@@ -11,6 +11,9 @@ public class RocketMovement : MonoBehaviour {
 	private float rotationX;
 	public float RotSpeed;
 
+	public float MaxHealth;
+	public float health;
+
 	public GameObject shot;
 	public Transform shotSpawner;
 	public GameObject explosion;
@@ -22,11 +25,16 @@ public class RocketMovement : MonoBehaviour {
 	{
 
 		originalRotation = transform.localRotation;
+		GetComponent<Rigidbody> ().constraints = RigidbodyConstraints.FreezePositionZ;
+		health = MaxHealth;
 
 	}
 
 	void Update () {
 	
+		GetComponent<Rigidbody> ().velocity = new Vector3(0, 0, 0);
+		GetComponent<Rigidbody> ().AddForce (Vector3.zero);
+		transform.position = new Vector3 (transform.position.x, transform.position.y, 0);
 
 		if (Input.GetKey (KeyCode.A) || Input.GetKey (KeyCode.LeftArrow)) 
 		{
@@ -101,6 +109,14 @@ public class RocketMovement : MonoBehaviour {
 
 		Quaternion xQuaternion = Quaternion.AngleAxis (rotationX, Vector3.up);
 		transform.localRotation = originalRotation * xQuaternion;
+
+		if (health <= 0) 
+		{
+
+			Instantiate(explosion, transform.position , transform.rotation);
+			Destroy(gameObject);
+
+		}
 
 	}
 

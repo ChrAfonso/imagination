@@ -28,4 +28,17 @@ public class explosion_kill : MonoBehaviour {
 		}
 
 	}
+
+	void OnDestroy()
+	{
+
+		if (gameObject.name == "mothership_explosion") 
+		{
+
+			Application.LoadLevel("main_room");
+
+		}
+
+
+	}
 }
