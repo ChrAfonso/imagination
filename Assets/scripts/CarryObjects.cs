@@ -11,6 +11,11 @@ public class CarryObjects : MonoBehaviour {
 	private float distance;
 	public float smooth = 5.0f;
 	private GameObject p;
+	
+	public Texture2D HandGrab;
+	public Texture2D HandFist;
+	private bool drawHand;
+	private bool drawing;
 
 	public GameObject CursorObject;
 
@@ -36,11 +41,50 @@ public class CarryObjects : MonoBehaviour {
 
 	}
 
+	
+	void OnGUI()
+	{
+
+		Rect HandPos = new Rect(Screen.width / 2 - 16, Screen.height / 2 - 16, 32, 32);
+		
+		if (drawHand) 
+		{
+			if (Input.GetMouseButton(0))
+			{
+				drawing = true;
+			}
+			else
+			{
+			GUI.DrawTexture(HandPos, HandGrab);
+			}
+
+
+
+		}
+
+
+
+		if (drawing) 
+		{
+
+			GUI.DrawTexture(HandPos, HandFist);
+
+			if (Input.GetMouseButtonUp (0)) 
+			{
+
+				drawing = false;
+				
+			}
+
+		}
+		
+	}
 
 	void OnTriggerEnter(Collider other) 
 	{
 		if (other.transform.gameObject.tag == "Item") {
 			objectUnderCursor = other.transform.gameObject;
+			drawHand = true;
 		}
 	}
 
@@ -48,6 +92,7 @@ public class CarryObjects : MonoBehaviour {
 	{
 		if (other.transform.gameObject == objectUnderCursor) {
 			objectUnderCursor = null;
+			drawHand = false;
 		}
 	}
 

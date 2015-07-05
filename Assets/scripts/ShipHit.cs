@@ -27,6 +27,7 @@ public class ShipHit : MonoBehaviour {
 					GameObject.Destroy(GameObject.Find("Small explosion(Clone)"));
 				}*/
 					GameObject.Destroy (gameObject);
+				Application.LoadLevel("main_room");
 				}
 
 			}

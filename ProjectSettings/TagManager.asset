@@ -14,6 +14,7 @@ TagManager:
   - RacingTargetItem
   - RacingGUIText
   - Enemy
+  - Table
   layers:
   - Default
   - TransparentFX

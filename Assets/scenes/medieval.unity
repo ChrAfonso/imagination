@@ -126,6 +126,22 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11492018, guid: 76206122c7cf83b4fa2208cfe875a6f9, type: 2}
+      propertyPath: HandGrab
+      value: 
+      objectReference: {fileID: 2800000, guid: a5f25f4505130ec44babe28f13ad07ac, type: 3}
+    - target: {fileID: 11492018, guid: 76206122c7cf83b4fa2208cfe875a6f9, type: 2}
+      propertyPath: HandFist
+      value: 
+      objectReference: {fileID: 2800000, guid: 97627e2f2859ada4fa9384b70a9a9c6d, type: 3}
+    - target: {fileID: 2388760, guid: 76206122c7cf83b4fa2208cfe875a6f9, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 13514798, guid: 76206122c7cf83b4fa2208cfe875a6f9, type: 2}
+      propertyPath: m_Radius
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 76206122c7cf83b4fa2208cfe875a6f9, type: 2}
   m_IsPrefabParent: 0

@@ -25,20 +25,15 @@ public class explosion_kill : MonoBehaviour {
 
 			}
 
+			if (!GameObject.Find("Mothership"))
+			{
+
+				Application.LoadLevel("main_room");
+
+			}
+
 		}
 
 	}
 
-	void OnDestroy()
-	{
-
-		if (gameObject.name == "mothership_explosion") 
-		{
-
-			Application.LoadLevel("main_room");
-
-		}
-
-
-	}
 }
