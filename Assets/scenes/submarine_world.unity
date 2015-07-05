@@ -2211,8 +2211,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d02d9fb06d127cc4ba9f1f59f601be61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ForwardSpeed: 15
-  DirectionChangeSpeed: 18
+  ForwardSpeed: 23
+  DirectionChangeSpeed: 28
   minumumZ: -40
   maximumZ: 40
   Cameradistance: {x: 0, y: 0, z: 65}

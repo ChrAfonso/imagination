@@ -2,9 +2,9 @@
 using System.Collections;
 
 public class CannonFire : MonoBehaviour {
-	public float ballSize = .05f;
+	public float ballSize = .5f;
 	public float ballMass = 2f;
-	public int shootPower = 1500;
+	public int shootPower = 10000;
 	public GameObject explo;
 	public static GameObject expl;
 	Camera cannonView;
@@ -42,7 +42,8 @@ public class CannonFire : MonoBehaviour {
 		} else {
 			cannonView = canCam.GetComponent<Camera> ();
 		}
-
+		CannonLook.ChangeAngles(155F, 205F, 0F, 10F);
+		/*CannonLook.ChangeAngles(155F, 205F, 0F, 10F);
 		switch (gameObject.name) {
 		case "Barrel": CannonLook.ChangeAngles(-35F, 25F, 0F, 10F);
 			break;
@@ -53,7 +54,7 @@ public class CannonFire : MonoBehaviour {
 		case "Barrel 3": CannonLook.ChangeAngles(155F, 205F, 0F, 10F);
 			break;
 		}
-
+*/
 
 		/*
 
@@ -106,6 +107,9 @@ public class CannonFire : MonoBehaviour {
 		//Debug.Log ("Update");
 		if (Input.GetKey (KeyCode.Backspace)) {
 			InCannonView = false;
+			
+			
+			GameObject.Find ("WalkGrabCamera").GetComponent<WalkCamera>().enabled = true;
 			if(cannonView != null)
 			{
 				//GameObject.Destroy(cannonView);
@@ -162,8 +166,8 @@ public class CannonFire : MonoBehaviour {
 			dir = newpos-ball.transform.position;
 			Shooting=true;
 			
-			CannonRigid.AddForce (cannonView.transform.forward * power);
-
+			CannonRigid.AddForce (cannonView.transform.forward* power);
+			Debug.Log(cannonView.transform.forward);
 
 /*----------------------------------------------------------
 			Ray ray = cannonView.ScreenPointToRay(new Vector3(cannonView.transform.position.x, cannonView.transform.position.y, cannonView.transform.position.z));
@@ -209,7 +213,7 @@ public class CannonFire : MonoBehaviour {
 		sphere.name = "CannonBall";
 		//sphere.tag = "CannonBall";
 		CannonRigid = sphere.AddComponent<Rigidbody> ();
-		Vector3 ballPos = transform.position + cannonView.transform.forward*.3f;
+		Vector3 ballPos = transform.position + cannonView.transform.forward*2.2f;
 		sphere.transform.position = ballPos;
 		sphere.transform.localScale -= new Vector3 (1 - scale, 1 - scale, 1 - scale);
 		CannonRigid.mass = mass;
@@ -233,22 +237,23 @@ public class CannonFire : MonoBehaviour {
 		}
 		active = gameObject;
 		//Debug.Log (active.name);
-
+		GameObject.Find ("WalkGrabCamera").GetComponent<WalkCamera>().enabled = false;
 		if (InCannonView) {
 			return;
 		}
 		InCannonView = true;
 
-		if (gameObject.name == "Barrel 2" ||
-			gameObject.name == "Barrel 3") {
-			canCam.transform.eulerAngles = new Vector3 (transform.eulerAngles.x, transform.eulerAngles.y + 90, transform.eulerAngles.z);
-
+		if (gameObject.name == "Barrel 2"){
+			//canCam.transform.eulerAngles = new Vector3 (transform.eulerAngles.x, transform.eulerAngles.y + 90, transform.eulerAngles.z);
+			
+			CannonLook.ChangeAngles(155F, 205F, 0F, 10F);
 		} else {
-			canCam.transform.eulerAngles = new Vector3 (transform.eulerAngles.x, transform.eulerAngles.y - 90, transform.eulerAngles.z);
-
+			//canCam.transform.eulerAngles = new Vector3 (transform.eulerAngles.x, transform.eulerAngles.y - 180, transform.eulerAngles.z);
+			
+			CannonLook.ChangeAngles(-25F, 35F, 0F, 10F);
 		}
 		//canCam.transform.eulerAngles = new Vector3 (transform.eulerAngles.x, transform.eulerAngles.y - 90, transform.eulerAngles.z);
-		canCam.transform.position = transform.position;
+		canCam.transform.position = transform.position+cannonView.transform.forward*2.2f;
 	
 		cannonOri.enabled = true;
 		cannonView.enabled = true;
