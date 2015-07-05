@@ -5,7 +5,6 @@ public class explosion_kill : MonoBehaviour {
 
 	public float TimetoKill;
 	public float DownSpeed;
-	
 
 	void Update () {
 	
@@ -28,6 +27,7 @@ public class explosion_kill : MonoBehaviour {
 			if (!GameObject.Find("Mothership"))
 			{
 
+				Toolbox.Instance.level_space_complete = true;
 				Application.LoadLevel("main_room");
 
 			}

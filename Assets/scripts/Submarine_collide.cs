@@ -13,7 +13,8 @@ public class Submarine_collide : MonoBehaviour {
 
 		}
 		if (collider.gameObject.tag == "SubmarineFinish") {
-			
+
+			Toolbox.Instance.level_submarine_complete = true;
 			Application.LoadLevel("main_room");
 
 		}
