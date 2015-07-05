@@ -1,5 +1,7 @@
 #Imagination
 
+![Composite Screenshot](https://github.com/ChrAfonso/imagination/blob/master/Screenshots/imagination_screenshot_1.png)
+
 Created during the Summer Game Jam 2015 in Graz    
 
 
@@ -17,7 +19,11 @@ Watch those blocks come to live from your playroom. Relive your early days of yo
 ###Credits 
 
 Christian Afonso
+
 David A Miller
+
 Jakob Lindner
+
 Karl Haubenwallner
+
 Stefan Reichenauer
