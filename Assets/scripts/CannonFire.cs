@@ -20,7 +20,10 @@ public class CannonFire : MonoBehaviour {
 	Rigidbody CannonRigid;
 	public GameObject active;
 	public bool activate;
-	
+
+	private AudioSource sfxPlayer;
+	public AudioClip sfxShoot;
+
 	// Use this for initialization
 	void Start () {
 		//Debug.Log ("Start");
@@ -98,6 +101,8 @@ public class CannonFire : MonoBehaviour {
 		if (gameObject.GetComponent<MeshCollider>() == null) {
 			gameObject.AddComponent<MeshCollider>();
 		}
+
+		sfxPlayer = gameObject.AddComponent<AudioSource>();
 	}
 
 
@@ -224,8 +229,12 @@ public class CannonFire : MonoBehaviour {
 //		Debug.Log (newMat.name);
 		sphere.gameObject.GetComponent<MeshRenderer>().material.color = Color.black;
 
-	sphere.gameObject.AddComponent<CannonBoom> ();
+		sphere.gameObject.AddComponent<CannonBoom> ();
 
+		if (sfxShoot)
+		{
+			sfxPlayer.PlayOneShot(sfxShoot);
+		}
 	}
 
 
