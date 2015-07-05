@@ -75,7 +75,7 @@ public class CarControl : MonoBehaviour {
 	{
 		brake = Input.GetKey ("space");
 		if (goalText) {
-			goalText.text = current_targetItems + " / " + num_targetItems + " Bauklötzen";
+			goalText.text = current_targetItems + " / " + num_targetItems + " Building Blocks";
 		}
 		if (current_targetItems == num_targetItems) {
 			Application.LoadLevel("main_room");

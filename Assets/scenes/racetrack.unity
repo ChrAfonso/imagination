@@ -1250,7 +1250,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11483504, guid: e74c23d94d4ec04498cc753d2eaf6e09, type: 2}
       propertyPath: num_targetItems
-      value: 27
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 8288634, guid: e74c23d94d4ec04498cc753d2eaf6e09, type: 2}
       propertyPath: m_audioClip
