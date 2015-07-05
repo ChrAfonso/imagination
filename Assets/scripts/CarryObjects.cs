@@ -99,6 +99,7 @@ public class CarryObjects : MonoBehaviour {
 		if (other.gameObject.tag == "UsableCanon") {
 			use = true;
 		}
+
 	}
 
 	void OnTriggerExit(Collider other)
@@ -109,7 +110,7 @@ public class CarryObjects : MonoBehaviour {
 		}
 	
 		if (other.gameObject.tag == "UsableCanon") {
-			use = false;
+			//use = false;
 		}
 
 	}
