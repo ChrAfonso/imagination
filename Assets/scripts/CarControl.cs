@@ -25,6 +25,11 @@ public class CarControl : MonoBehaviour {
 
 	private float powerInput;
 	private Rigidbody carRigidBody;
+	private AudioSource engineSound;
+	private AudioSource pickup_Sound;
+
+	private Vector3 startPos;
+	private Quaternion startRot;
 
 	public Text goalText;
 
@@ -49,6 +54,20 @@ public class CarControl : MonoBehaviour {
 
 		GameObject obj = GameObject.FindGameObjectWithTag ("RacingGUIText");
 		goalText = obj.GetComponent<Text>();
+
+		foreach (AudioSource s in GetComponents<AudioSource> ()) {
+			if (s.clip.name == "pick_up") {
+				pickup_Sound = s;
+			}
+
+			if (s.clip.name == "engine_low") {
+				engineSound = s;
+			}
+		}
+		engineSound = GetComponent<AudioSource> ();
+
+		startPos = transform.position;
+		startRot = transform.rotation;
 	}
 	
 	// Update is called once per frame
@@ -61,6 +80,23 @@ public class CarControl : MonoBehaviour {
 		if (current_targetItems == num_targetItems) {
 			Application.LoadLevel("main_room");
 		}
+
+		if (Input.GetKey (KeyCode.R)) {
+			c_Wheel_L1.brakeTorque = 0.0f;
+			c_Wheel_L2.brakeTorque = 0.0f;
+			c_Wheel_R1.brakeTorque = 0.0f;
+			c_Wheel_R2.brakeTorque = 0.0f;
+			
+			c_Wheel_L2.motorTorque = 0.0f;
+			c_Wheel_R2.motorTorque = 0.0f;
+			c_Wheel_L1.motorTorque = 0.0f;
+			c_Wheel_R1.motorTorque = 0.0f;
+
+			transform.position = startPos;
+			transform.rotation = startRot;
+			carRigidBody.velocity = new Vector3(0f, 0f, 0f);
+		}
+
 	}
 
 	void FixedUpdate ()
@@ -81,22 +117,19 @@ public class CarControl : MonoBehaviour {
 		float currentSpeed = carRigidBody.velocity.magnitude;
 
 		Debug.Log ("Speed: " + currentSpeed);
-
+	
 		if (currentSpeed > maxSpeed) {
 			carRigidBody.velocity = carRigidBody.velocity.normalized * maxSpeed;
 		}
 
+		float f = 1f - (maxSpeed - carRigidBody.velocity.magnitude) / maxSpeed;
 
-		float f = 1 - (maxSpeed - carRigidBody.velocity.magnitude) / maxSpeed;
+		engineSound.pitch = 1f + f;
 
 		carRigidBody.AddForce (transform.up.normalized * -1.0f * f * 0.09f);
 
-		if (!brake) {
 
-			c_Wheel_L1.brakeTorque = 0.0f;
-			c_Wheel_L2.brakeTorque = 0.0f;
-			c_Wheel_R1.brakeTorque = 0.0f;
-			c_Wheel_R2.brakeTorque = 0.0f;
+		if (!brake) {
 
 			c_Wheel_L2.motorTorque = 0.4f * powerInput;
 			c_Wheel_R2.motorTorque = 0.4f * powerInput;
@@ -114,6 +147,8 @@ public class CarControl : MonoBehaviour {
 			
 			c_Wheel_L2.motorTorque = 0.0f;
 			c_Wheel_R2.motorTorque = 0.0f;
+			c_Wheel_L1.motorTorque = 0.0f;
+			c_Wheel_R1.motorTorque = 0.0f;
 
 		
 		}
@@ -144,6 +179,7 @@ public class CarControl : MonoBehaviour {
 		if ((other.gameObject.tag == "RacingTargetItem")) {
 			current_targetItems ++;
 			Destroy(other.gameObject);
+			pickup_Sound.PlayOneShot(pickup_Sound.clip);
 		}
 	}
 
