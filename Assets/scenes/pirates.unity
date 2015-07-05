@@ -197,8 +197,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 363493486}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -232, y: 59.5400009, z: 225.300003}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -232, y: 57.9000015, z: 225.300003}
+  m_LocalScale: {x: .5, y: .5, z: .5}
   m_Children:
   - {fileID: 1540593822}
   m_Father: {fileID: 931767462}
@@ -223,7 +223,7 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 363493486}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 62a3fb5cca6143845b757cee979706b4, type: 3}
   m_Name: 
@@ -335,6 +335,22 @@ Camera:
 Transform:
   m_PrefabParentObject: {fileID: 400070, guid: 7c400a4c68b728f42a3f3fd80e1beb39, type: 3}
   m_PrefabInternal: {fileID: 1118357599}
+--- !u!1 &573524830 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100058, guid: 7c400a4c68b728f42a3f3fd80e1beb39, type: 3}
+  m_PrefabInternal: {fileID: 1118357599}
+--- !u!64 &573524834
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 573524830}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_Mesh: {fileID: 4300000, guid: 7c400a4c68b728f42a3f3fd80e1beb39, type: 3}
 --- !u!1 &683652891 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100070, guid: 558fda6fee099a544ba5ea09bd424d67, type: 3}
