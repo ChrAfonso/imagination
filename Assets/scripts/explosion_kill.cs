@@ -5,7 +5,15 @@ public class explosion_kill : MonoBehaviour {
 
 	public float TimetoKill;
 	public float DownSpeed;
+	public AudioSource audioPlayer;
 	
+
+	void Awake()
+	{
+		audioPlayer = GetComponent<AudioSource> ();
+		if (audioPlayer)
+			audioPlayer.PlayOneShot (audioPlayer.clip);
+	}
 
 	void Update () {
 	

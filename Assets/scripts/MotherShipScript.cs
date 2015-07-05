@@ -14,6 +14,9 @@ public class MotherShipScript : MonoBehaviour {
 	public Transform Rocket;
 	public float BulletSpeed;
 
+	public AudioSource audioPlayer;
+	public AudioClip pew;
+
 	public GameObject explosion;
 	public float MaxReloadTime;
 	Vector3 StartPos;
@@ -91,7 +94,6 @@ public class MotherShipScript : MonoBehaviour {
 
 			Instantiate(explosion, transform.position , transform.rotation);
 			Destroy(gameObject);
-
 		}
 
 	}
@@ -138,6 +140,8 @@ public class MotherShipScript : MonoBehaviour {
 			getBullet = Instantiate(Bullet, BulletSpawner.transform.position, BulletSpawner.transform.rotation) as GameObject;
 			getBullet.GetComponent<Rigidbody>().AddForce(Vector3.down * BulletSpeed);
 			//Physics.IgnoreCollision (Bullet.GetComponent<Collider> (), GetComponent<Collider> ());
+			if (audioPlayer && pew)
+				audioPlayer.PlayOneShot(pew);
 
 
 		}
