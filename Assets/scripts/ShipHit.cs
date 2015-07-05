@@ -17,14 +17,15 @@ public class ShipHit : MonoBehaviour {
 
 			if(hits >= 3)
 			{
-				transform.position = new Vector3(transform.position.x, transform.position.y -.05f, transform.position.z);
-				if(transform.position.y < 0)
+				transform.position = new Vector3(transform.position.x, transform.position.y -.2f, transform.position.z);
+				if(transform.position.y < 10)
 				{
 					//emi.emit = false;
+				/*
 				while(GameObject.Find("Small explosion(Clone)") != null)
 				{
 					GameObject.Destroy(GameObject.Find("Small explosion(Clone)"));
-				}
+				}*/
 					GameObject.Destroy (gameObject);
 				}
 
@@ -38,8 +39,8 @@ public class ShipHit : MonoBehaviour {
 				active = false;
 					emi.emit = false;
 					//SinkShip();//GameObject.Destroy (gameObject);
-					
-					count = hits>=2 ? 60 : 20;
+				//emi.maxSize = 5;
+					count = hits>=2 ? 80 : 20;
 				}
 			//}
 		}
